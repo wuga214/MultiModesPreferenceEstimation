@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67730fb7-384b-49ab-98b1-6b78abd786f9" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MultiModesPreferenceEstimation.iml" afterPath="$PROJECT_DIR$/.idea/MultiModesPreferenceEstimation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/mmp.py" afterPath="$PROJECT_DIR$/models/mmp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/mmp2.py" afterPath="$PROJECT_DIR$/models/mmp2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -88,8 +83,8 @@
       <file leaf-file-name="mmp2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/mmp2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="222" column="44" lean-forward="true" selection-start-line="222" selection-start-column="44" selection-end-line="222" selection-end-column="44" />
+            <state relative-caret-position="565">
+              <caret line="243" column="73" lean-forward="true" selection-start-line="243" selection-start-column="73" selection-end-line="243" selection-end-column="73" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -445,8 +440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/mmp2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="222" column="44" lean-forward="true" selection-start-line="222" selection-start-column="44" selection-end-line="222" selection-end-column="44" />
+        <state relative-caret-position="565">
+          <caret line="243" column="73" lean-forward="true" selection-start-line="243" selection-start-column="73" selection-end-line="243" selection-end-column="73" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

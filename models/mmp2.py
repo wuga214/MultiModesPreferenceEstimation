@@ -41,7 +41,7 @@ class MultiModesPreferenceEstimation(object):
     def get_graph(self):
         self.corruption = tf.placeholder(tf.float32)
         self.inputs = tf.placeholder(tf.float32, (None, self.input_dim), name="inputs")
-        inputs = tf.nn.dropout(self.inputs, 1-self.corruption)
+        inputs = tf.floor(tf.nn.dropout(self.inputs, 1-self.corruption))
 
         item_embeddings = tf.constant(self.item_embeddings, name="item_embeddings")
 
@@ -241,7 +241,7 @@ def mmp2(matrix_train, embeded_matrix=np.empty((0)),
 
     Q = (Q - np.mean(Q)) / np.std(Q)
 
-    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, 7, 4, 50, lamb,
+    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, 5, 3, 50, lamb,
                                            item_embeddings=Q)
     model.train_model(matrix_train, iteration)
 
