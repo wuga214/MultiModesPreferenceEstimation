@@ -72,11 +72,10 @@ class MultiModesPreferenceEstimation(object):
             tf.summary.histogram("item_query", self.item_query)
 
             user_keys = tf.nn.relu(tf.Variable(tf.truncated_normal([self.key_dim, self.mode_dim],
-                                                               stddev=1 / 500.0),
+                                                                   stddev=1 / 500.0),
                                                name="user_key_weights"))
 
             tf.summary.histogram("user_keys", user_keys)
-
 
         with tf.variable_scope('encoding'):
 
@@ -103,7 +102,7 @@ class MultiModesPreferenceEstimation(object):
             #           + tf.nn.l2_loss(encode_bias) \
             #           + tf.nn.l2_loss(self.decode_bias)
 
-            loss_weights = self.inputs + 0.1*(1-self.inputs)
+            loss_weights = self.inputs + 0.4*(1-self.inputs)
             sigmoid_loss = tf.losses.mean_squared_error(labels=self.inputs, predictions=self.prediction, weights=loss_weights)
             #tf.losses.mean_squared_error(labels=inputs, predictions=self.prediction)
             #tf.nn.sigmoid_cross_entropy_with_logits(labels=inputs, logits=self.prediction)
@@ -241,7 +240,7 @@ def mmp2(matrix_train, embeded_matrix=np.empty((0)),
 
     Q = (Q - np.mean(Q)) / np.std(Q)
 
-    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, 5, 3, 50, lamb,
+    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, 5, 3, 128, lamb,
                                            item_embeddings=Q)
     model.train_model(matrix_train, iteration)
 
