@@ -82,7 +82,8 @@ class MultiModesPreferenceEstimation(object):
             encode_bias = tf.Variable(tf.constant(0., shape=[self.mode_dim, self.embed_dim]), name="Bias")
 
             attention = tf.tensordot(tf.multiply(tf.expand_dims(inputs, -1), item_keys), user_keys, axes=[[2], [0]])
-            attention = tf.nn.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
+            attention = attention/tf.sqrt(self.key_dim)
+            attention = tf.sparse.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
 
             tf.summary.histogram("attention", attention)
 
