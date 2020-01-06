@@ -62,12 +62,8 @@ class MultiModesPreferenceEstimation(object):
 
             tf.summary.histogram("item_values", item_values)
 
-            # item_query_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.embed_dim], stddev=1 / 500.0),
-            #                                  name="item_query_weights")
-
             self.item_query = tf.Variable(tf.truncated_normal([self.input_dim, self.embed_dim], stddev=1 / 500.0),
                                              name="item_query_weights")
-                #tf.matmul(item_embeddings, self.item_query_weights)
 
             tf.summary.histogram("item_query", self.item_query)
 
@@ -82,32 +78,24 @@ class MultiModesPreferenceEstimation(object):
             encode_bias = tf.Variable(tf.constant(0., shape=[self.mode_dim, self.embed_dim]), name="Bias")
 
             attention = tf.tensordot(tf.multiply(tf.expand_dims(inputs, -1), item_keys), user_keys, axes=[[2], [0]])
-            attention = attention/tf.sqrt(self.key_dim)
-            attention = tf.sparse.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
+            attention = attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32))
+            attention = tf.nn.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
 
             tf.summary.histogram("attention", attention)
 
-            self.user_latent = tf.nn.relu(tf.tensordot(attention, item_values, axes=[[2], [0]]) + encode_bias)
+            self.user_latent = tf.nn.elu(tf.tensordot(attention, item_values, axes=[[2], [0]]) + encode_bias)
 
         with tf.variable_scope('decoding'):
-            #self.decode_bias = tf.Variable(tf.constant(0., shape=[self.output_dim]), name="Bias")
 
             prediction = tf.tensordot(self.user_latent, tf.transpose(self.item_query), axes=[[2], [0]])
-            self.prediction = tf.reduce_max(tf.transpose(prediction, perm=[0, 2, 1]), axis=2) #+ self.decode_bias
+            self.prediction = tf.reduce_max(tf.transpose(prediction, perm=[0, 2, 1]), axis=2)
 
         with tf.variable_scope('loss'):
-            l2_loss = tf.nn.l2_loss(user_keys) \
-                      + tf.nn.l2_loss(self.item_query)
-                      # + tf.nn.l2_loss(item_value_weights)
-                      # + tf.nn.l2_loss(self.item_query)
-            #           + tf.nn.l2_loss(encode_bias) \
-            #           + tf.nn.l2_loss(self.decode_bias)
+            l2_loss = tf.nn.l2_loss(self.item_query)/(tf.cast(self.input_dim*self.embed_dim, dtype=tf.float32))
 
             loss_weights = self.inputs + 0.4*(1-self.inputs)
             sigmoid_loss = tf.losses.mean_squared_error(labels=self.inputs, predictions=self.prediction, weights=loss_weights)
-            #tf.losses.mean_squared_error(labels=inputs, predictions=self.prediction)
-            #tf.nn.sigmoid_cross_entropy_with_logits(labels=inputs, logits=self.prediction)
-            self.loss = tf.reduce_mean(sigmoid_loss) #+ self.lamb*l2_loss
+            self.loss = tf.reduce_mean(sigmoid_loss) + self.lamb*l2_loss
 
             tf.summary.histogram("label", self.inputs)
 
