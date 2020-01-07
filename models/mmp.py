@@ -62,6 +62,11 @@ class MultiModesPreferenceEstimation(object):
 
             item_values = tf.matmul(item_embeddings, item_value_weights)
 
+            # item_value_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.embed_dim, self.mode_dim], stddev=1 / 500.0),
+            #                                  name="item_value_weights")
+            #
+            # item_values = tf.tensordot(item_embeddings, item_value_weights, axes=[[1], [0]])
+
             tf.summary.histogram("item_values", item_values)
 
             self.item_query = tf.Variable(tf.truncated_normal([self.input_dim, self.embed_dim], stddev=1 / 500.0),
@@ -80,16 +85,25 @@ class MultiModesPreferenceEstimation(object):
             encode_bias = tf.Variable(tf.constant(0., shape=[self.mode_dim, self.embed_dim]), name="Bias")
 
             attention = tf.tensordot(tf.multiply(tf.expand_dims(inputs, -1), item_keys), user_keys, axes=[[2], [0]])
-            attention = attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32))
-            attention = tf.nn.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
+            attention = tf.exp(tf.transpose(attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32)), perm=[0, 2, 1]))
+            attention = tf.multiply(attention/tf.expand_dims(tf.reduce_sum(attention, axis=2), -1), tf.reduce_sum(inputs))
+
+            # attention = attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32))
+            # attention = tf.nn.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
 
             tf.summary.histogram("attention", attention)
 
-            self.user_latent = tf.nn.elu(tf.tensordot(attention, item_values, axes=[[2], [0]]) + encode_bias)
+            # self.user_latent = tf.nn.leaky_relu(tf.reduce_sum(tf.multiply(tf.expand_dims(attention, -1), tf.transpose(item_values,perm=[2,0,1])), axis=2) + encode_bias)
+
+            self.user_latent = tf.nn.leaky_relu(tf.tensordot(attention, item_values, axes=[[2], [0]]) + encode_bias)
 
         with tf.variable_scope('decoding'):
 
             prediction = tf.tensordot(self.user_latent, tf.transpose(self.item_query), axes=[[2], [0]])
+            # prediction = tf.transpose(prediction, perm=[0, 2, 1])
+            # attention = tf.nn.softmax(prediction, axis=2)
+            # self.prediction = tf.reduce_sum(tf.multiply(prediction,attention), axis=2)
+
             self.prediction = tf.reduce_max(tf.transpose(prediction, perm=[0, 2, 1]), axis=2)
 
         with tf.variable_scope('loss'):
@@ -228,7 +242,7 @@ def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3, batc
                                       power_iteration_normalizer='QR',
                                       random_state=seed)
 
-    Q = Qt.T*np.sqrt(sigma)
+    Q = Qt.T #*np.sqrt(sigma)
 
     Q = (Q - np.mean(Q)) / np.std(Q)
 
