@@ -191,8 +191,7 @@ def get_pmi_matrix_gpu(matrix, root):
 
 
 def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3, batch_size=32, optimizer="Adam",
-        learning_rate=0.001,
-             iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False, seed=1, root=1, **unused):
+        learning_rate=0.001, iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False, seed=1, root=1, **unused):
     """
     PureSVD algorithm
     :param matrix_train: rating matrix
@@ -231,8 +230,7 @@ def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3, batc
     Q = (Q - np.mean(Q)) / np.std(Q)
 
     model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, mode_dim, key_dim, batch_size, lamb,
-                                           learning_rate=learning_rate,
-                                           optimizer=Regularizer[optimizer], item_embeddings=Q)
+                                           learning_rate=learning_rate, optimizer=Regularizer[optimizer], item_embeddings=Q)
 
     model.train_model(matrix_train, corruption, epoch)
 

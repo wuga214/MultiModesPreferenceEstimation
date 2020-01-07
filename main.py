@@ -1,12 +1,13 @@
-import numpy as np
-from utils.progress import WorkSplitter, inhour
-import argparse
-import time
-from utils.io import load_numpy, load_pandas, load_csv
-from utils.argcheck import check_float_positive, check_int_positive, shape
-from utils.modelnames import models
-from prediction.predictor import predict
 from evaluation.metrics import evaluate
+from prediction.predictor import predict
+from utils.argcheck import check_float_positive, check_int_positive, shape
+from utils.io import load_numpy, load_pandas, load_csv
+from utils.modelnames import models
+from utils.progress import WorkSplitter, inhour
+
+import argparse
+import numpy as np
+import time
 
 
 def main(args):
@@ -37,7 +38,6 @@ def main(args):
     print("Epoch: {0}".format(args.epoch))
     print("Corruption: {0}".format(args.corruption))
     print("Root: {0}".format(args.root))
-
     print("Evaluation Ranking Topk: {0}".format(args.topk))
 
     # Load Data
@@ -99,31 +99,31 @@ def main(args):
 
 if __name__ == "__main__":
     # Commandline arguments
-    parser = argparse.ArgumentParser(description="LRec")
+    parser = argparse.ArgumentParser(description="MMP")
 
+    parser.add_argument('--alpha', dest='alpha', type=check_float_positive, default=100.0)
+    parser.add_argument('--batch-size', dest='batch_size', type=check_int_positive, default=32)
+    parser.add_argument('--corruption', dest='corruption', type=check_float_positive, default=0.5)
+    parser.add_argument('--data-dir', dest='data_dir', default="datax/")
     parser.add_argument('--disable-item-item', dest='item', action='store_false')
     parser.add_argument('--disable-validation', dest='validation', action='store_false')
-    parser.add_argument('--iteration', dest='iteration', type=check_int_positive, default=1)
-    parser.add_argument('--alpha', dest='alpha', type=check_float_positive, default=100.0)
     parser.add_argument('--epoch', dest='epoch', type=check_int_positive, default=1)
+    parser.add_argument('--gpu', dest='gpu', action='store_true')
+    parser.add_argument('--iteration', dest='iteration', type=check_int_positive, default=1)
+    parser.add_argument('--key-dimension', dest='key_dim', type=check_int_positive, default=3)
     parser.add_argument('--lambda', dest='lamb', type=check_float_positive, default=100)
-    parser.add_argument('--rank', dest='rank', type=check_int_positive, default=100)
-    parser.add_argument('--root', dest='root', type=check_float_positive, default=1)
-    parser.add_argument('--corruption', dest='corruption', type=check_float_positive, default=0.5)
-    parser.add_argument('--seed', dest='seed', type=check_int_positive, default=1)
+    parser.add_argument('--learning-rate', dest='learning_rate', type=check_float_positive, default=0.001)
     parser.add_argument('--model', dest='model', default="WRMF")
     parser.add_argument('--mode-dimension', dest='mode_dim', type=check_int_positive, default=5)
-    parser.add_argument('--key-dimension', dest='key_dim', type=check_int_positive, default=3)
-    parser.add_argument('--batch-size', dest='batch_size', type=check_int_positive, default=32)
     parser.add_argument('--optimizer', dest='optimizer', default="Adam")
-    parser.add_argument('--learning-rate', dest='learning_rate', type=check_float_positive, default=0.001)
-    parser.add_argument('--data-dir', dest='data_dir', default="datax/")
+    parser.add_argument('--rank', dest='rank', type=check_int_positive, default=100)
+    parser.add_argument('--root', dest='root', type=check_float_positive, default=1)
+    parser.add_argument('--seed', dest='seed', type=check_int_positive, default=1)
+    parser.add_argument('--shape', help="CSR Shape", dest="shape", type=shape, nargs=2)
+    parser.add_argument('--similarity', dest='sim_measure', default='Cosine')
+    parser.add_argument('--topk', dest='topk', type=check_int_positive, default=50)
     parser.add_argument('--train', dest='train_set', default='Rtrain.npz')
     parser.add_argument('--valid', dest='valid_set', default='Rvalid.npz')
-    parser.add_argument('--topk', dest='topk', type=check_int_positive, default=50)
-    parser.add_argument('--gpu', dest='gpu', action='store_true')
-    parser.add_argument('--similarity', dest='sim_measure', default='Cosine')
-    parser.add_argument('--shape', help="CSR Shape", dest="shape", type=shape, nargs=2)
     args = parser.parse_args()
 
     main(args)
