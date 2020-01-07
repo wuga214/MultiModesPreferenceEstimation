@@ -4,7 +4,7 @@ from scipy.sparse.linalg import inv
 from sklearn.utils.extmath import randomized_svd
 from tqdm import tqdm
 from utils.progress import WorkSplitter, inhour
-from utils.regularizers import Regularizer
+from utils.optimizers import Optimizer
 
 import numpy as np
 import scipy.sparse as sparse
@@ -19,9 +19,10 @@ class MultiModesPreferenceEstimation(object):
                  mode_dim,
                  key_dim,
                  batch_size,
+                 alpha,
                  lamb=0.01,
                  learning_rate=1e-3,
-                 optimizer=Regularizer['Adam'],
+                 optimizer=Optimizer['Adam'],
                  item_embeddings=None,
                  **unused):
         self.input_dim = self.output_dim = input_dim
@@ -29,6 +30,7 @@ class MultiModesPreferenceEstimation(object):
         self.mode_dim = mode_dim
         self.key_dim = key_dim
         self.batch_size = batch_size
+        self.alpha = alpha
         self.lamb = lamb
         self.learning_rate = learning_rate
         self.optimizer = optimizer
@@ -93,7 +95,7 @@ class MultiModesPreferenceEstimation(object):
         with tf.variable_scope('loss'):
             l2_loss = tf.nn.l2_loss(self.item_query)/(tf.cast(self.input_dim*self.embed_dim, dtype=tf.float32))
 
-            loss_weights = self.inputs + 0.4*(1-self.inputs)
+            loss_weights = 1+self.alpha*tf.log(1+self.inputs) #self.inputs + 0.4*(1-self.inputs)
             sigmoid_loss = tf.losses.mean_squared_error(labels=self.inputs, predictions=self.prediction, weights=loss_weights)
             self.loss = tf.reduce_mean(sigmoid_loss) + self.lamb*l2_loss
 
@@ -191,7 +193,8 @@ def get_pmi_matrix_gpu(matrix, root):
 
 
 def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3, batch_size=32, optimizer="Adam",
-        learning_rate=0.001, iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False, seed=1, root=1, **unused):
+        learning_rate=0.001, iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False, seed=1, root=1,
+        alpha=1, **unused):
     """
     PureSVD algorithm
     :param matrix_train: rating matrix
@@ -229,8 +232,12 @@ def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3, batc
 
     Q = (Q - np.mean(Q)) / np.std(Q)
 
-    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, mode_dim, key_dim, batch_size, lamb,
-                                           learning_rate=learning_rate, optimizer=Regularizer[optimizer], item_embeddings=Q)
+    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, mode_dim, key_dim, batch_size,
+                                           alpha=alpha,
+                                           lamb=lamb,
+                                           learning_rate=learning_rate,
+                                           optimizer=Optimizer[optimizer],
+                                           item_embeddings=Q)
 
     model.train_model(matrix_train, corruption, epoch)
 

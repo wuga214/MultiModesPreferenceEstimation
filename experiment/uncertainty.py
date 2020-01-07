@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import json
 from tqdm import tqdm
-from utils.regularizers import Regularizer
+from utils.optimizers import Regularizer
 
 
 def uncertainty(Rtrain, df_input, rank):

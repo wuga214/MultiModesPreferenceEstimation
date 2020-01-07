@@ -4,7 +4,7 @@ import tensorflow as tf
 from models.predictor import predict
 from evaluation.metrics import evaluate
 from utils.progress import WorkSplitter
-from utils.regularizers import Regularizer
+from utils.optimizers import Regularizer
 from utils.modelnames import autoencoders
 from utils.io import save_dataframe_csv
 

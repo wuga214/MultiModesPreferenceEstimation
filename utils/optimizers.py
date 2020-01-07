@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-Regularizer = {
+Optimizer = {
     "Adam": tf.train.AdamOptimizer,
     "RMSProp": tf.train.RMSPropOptimizer,
     "SGD": tf.train.GradientDescentOptimizer,
