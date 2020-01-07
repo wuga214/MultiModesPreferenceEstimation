@@ -1,15 +1,15 @@
-import numpy as np
-import scipy.sparse as sparse
 from fbpca import pca
 from scipy.sparse import vstack, hstack
 from scipy.sparse.linalg import inv
 from sklearn.utils.extmath import randomized_svd
-from utils.progress import WorkSplitter, inhour
-import time
-
-import tensorflow as tf
 from tqdm import tqdm
+from utils.progress import WorkSplitter, inhour
 from utils.regularizers import Regularizer
+
+import numpy as np
+import scipy.sparse as sparse
+import time
+import tensorflow as tf
 
 
 class MultiModesPreferenceEstimation(object):
@@ -21,7 +21,7 @@ class MultiModesPreferenceEstimation(object):
                  batch_size,
                  lamb=0.01,
                  learning_rate=1e-3,
-                 optimizer=tf.train.RMSPropOptimizer,
+                 optimizer=Regularizer['Adam'],
                  item_embeddings=None,
                  **unused):
         self.input_dim = self.output_dim = input_dim
@@ -41,7 +41,7 @@ class MultiModesPreferenceEstimation(object):
     def get_graph(self):
         self.corruption = tf.placeholder(tf.float32)
         self.inputs = tf.placeholder(tf.float32, (None, self.input_dim), name="inputs")
-        inputs = tf.nn.dropout(self.inputs, 1-self.corruption)
+        inputs = tf.floor(tf.nn.dropout(self.inputs, 1-self.corruption))
 
         item_embeddings = tf.constant(self.item_embeddings, name="item_embeddings")
 
@@ -62,52 +62,40 @@ class MultiModesPreferenceEstimation(object):
 
             tf.summary.histogram("item_values", item_values)
 
-            # item_query_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.embed_dim], stddev=1 / 500.0),
-            #                                  name="item_query_weights")
-
             self.item_query = tf.Variable(tf.truncated_normal([self.input_dim, self.embed_dim], stddev=1 / 500.0),
                                              name="item_query_weights")
-                #tf.matmul(item_embeddings, self.item_query_weights)
 
             tf.summary.histogram("item_query", self.item_query)
 
             user_keys = tf.nn.relu(tf.Variable(tf.truncated_normal([self.key_dim, self.mode_dim],
-                                                               stddev=1 / 500.0),
+                                                                   stddev=1 / 500.0),
                                                name="user_key_weights"))
 
             tf.summary.histogram("user_keys", user_keys)
-
 
         with tf.variable_scope('encoding'):
 
             encode_bias = tf.Variable(tf.constant(0., shape=[self.mode_dim, self.embed_dim]), name="Bias")
 
             attention = tf.tensordot(tf.multiply(tf.expand_dims(inputs, -1), item_keys), user_keys, axes=[[2], [0]])
+            attention = attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32))
             attention = tf.nn.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
 
             tf.summary.histogram("attention", attention)
 
-            self.user_latent = tf.nn.relu(tf.tensordot(attention, item_values, axes=[[2], [0]]) + encode_bias)
+            self.user_latent = tf.nn.elu(tf.tensordot(attention, item_values, axes=[[2], [0]]) + encode_bias)
 
         with tf.variable_scope('decoding'):
-            #self.decode_bias = tf.Variable(tf.constant(0., shape=[self.output_dim]), name="Bias")
 
             prediction = tf.tensordot(self.user_latent, tf.transpose(self.item_query), axes=[[2], [0]])
-            self.prediction = tf.reduce_max(tf.transpose(prediction, perm=[0, 2, 1]), axis=2) #+ self.decode_bias
+            self.prediction = tf.reduce_max(tf.transpose(prediction, perm=[0, 2, 1]), axis=2)
 
         with tf.variable_scope('loss'):
-            l2_loss = tf.nn.l2_loss(user_keys) \
-                      + tf.nn.l2_loss(self.item_query)
-                      # + tf.nn.l2_loss(item_value_weights)
-                      # + tf.nn.l2_loss(self.item_query)
-            #           + tf.nn.l2_loss(encode_bias) \
-            #           + tf.nn.l2_loss(self.decode_bias)
+            l2_loss = tf.nn.l2_loss(self.item_query)/(tf.cast(self.input_dim*self.embed_dim, dtype=tf.float32))
 
-            loss_weights = self.inputs + 0.1*(1-self.inputs)
+            loss_weights = self.inputs + 0.4*(1-self.inputs)
             sigmoid_loss = tf.losses.mean_squared_error(labels=self.inputs, predictions=self.prediction, weights=loss_weights)
-            #tf.losses.mean_squared_error(labels=inputs, predictions=self.prediction)
-            #tf.nn.sigmoid_cross_entropy_with_logits(labels=inputs, logits=self.prediction)
-            self.loss = tf.reduce_mean(sigmoid_loss) #+ self.lamb*l2_loss
+            self.loss = tf.reduce_mean(sigmoid_loss) + self.lamb*l2_loss
 
             tf.summary.histogram("label", self.inputs)
 
@@ -135,7 +123,7 @@ class MultiModesPreferenceEstimation(object):
             remaining_size -= batch_size
         return batches
 
-    def train_model(self, rating_matrix, epoch=100, batches=None, **unused):
+    def train_model(self, rating_matrix, corruption, epoch=100, batches=None, **unused):
         if batches is None:
             batches = self.get_batches(rating_matrix, self.batch_size)
 
@@ -143,10 +131,10 @@ class MultiModesPreferenceEstimation(object):
         pbar = tqdm(range(epoch))
         for i in pbar:
             for step in range(len(batches)):
-                feed_dict = {self.inputs: batches[step].todense(), self.corruption: 0.2}
+                feed_dict = {self.inputs: batches[step].todense(), self.corruption: corruption}
                 training = self.sess.run([self.train], feed_dict=feed_dict)
 
-            feed_dict = {self.inputs: batches[0].todense(), self.corruption: 0.2}
+            feed_dict = {self.inputs: batches[0].todense(), self.corruption: corruption}
             summ = self.sess.run(self.summaries, feed_dict=feed_dict)
             self.writer.add_summary(summ, global_step=i)
 
@@ -171,7 +159,7 @@ def get_pmi_matrix(matrix, root):
     # user_rated = matrix.sum(axis=1)
     nnz = matrix.nnz
     pmi_matrix = []
-    for i in tqdm(xrange(rows)):
+    for i in tqdm(range(rows)):
         row_index, col_index = matrix[i].nonzero()
         if len(row_index) > 0:
             # import ipdb; ipdb.set_trace()
@@ -202,12 +190,12 @@ def get_pmi_matrix_gpu(matrix, root):
     return sparse.vstack(pmi_matrix)
 
 
-def mmp(matrix_train, embeded_matrix=np.empty((0)),
-             iteration=4, lamb=100, rank=200, fb=False, seed=1, root=1, **unused):
+def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3, batch_size=32, optimizer="Adam",
+        learning_rate=0.001, iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False, seed=1, root=1, **unused):
     """
     PureSVD algorithm
     :param matrix_train: rating matrix
-    :param embeded_matrix: item or user embedding matrix(side info)
+    :param embedded_matrix: item or user embedding matrix(side info)
     :param iteration: number of random SVD iterations
     :param rank: SVD top K eigenvalue ranks
     :param fb: facebook package or sklearn package. boolean
@@ -217,8 +205,8 @@ def mmp(matrix_train, embeded_matrix=np.empty((0)),
     """
     progress = WorkSplitter()
     matrix_input = matrix_train
-    if embeded_matrix.shape[0] > 0:
-        matrix_input = vstack((matrix_input, embeded_matrix.T))
+    if embedded_matrix.shape[0] > 0:
+        matrix_input = vstack((matrix_input, embedded_matrix.T))
 
     progress.subsection("Create PMI matrix")
     pmi_matrix = get_pmi_matrix(matrix_input, root)
@@ -228,12 +216,12 @@ def mmp(matrix_train, embeded_matrix=np.empty((0)),
     if fb:
         P, sigma, Qt = pca(pmi_matrix,
                            k=rank,
-                           n_iter=10,
+                           n_iter=iteration,
                            raw=True)
     else:
         P, sigma, Qt = randomized_svd(pmi_matrix,
                                       n_components=rank,
-                                      n_iter=10,
+                                      n_iter=iteration,
                                       power_iteration_normalizer='QR',
                                       random_state=seed)
 
@@ -241,9 +229,10 @@ def mmp(matrix_train, embeded_matrix=np.empty((0)),
 
     Q = (Q - np.mean(Q)) / np.std(Q)
 
-    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, 5, 3, 50, lamb,
-                                           item_embeddings=Q)
-    model.train_model(matrix_train, iteration)
+    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, mode_dim, key_dim, batch_size, lamb,
+                                           learning_rate=learning_rate, optimizer=Regularizer[optimizer], item_embeddings=Q)
+
+    model.train_model(matrix_train, corruption, epoch)
 
     print("Elapsed: {0}".format(inhour(time.time() - start_time)))
 
