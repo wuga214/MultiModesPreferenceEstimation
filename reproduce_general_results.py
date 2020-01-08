@@ -52,7 +52,7 @@ if __name__ == "__main__":
     parser.add_argument('--save-path', dest='save_path', default="ml1m/final_general/mmp_final.csv")
     parser.add_argument('--test', dest='test_set', default='Rtest.npz')
     parser.add_argument('--train', dest='train_set', default='Rtrain.npz')
-    parser.add_argument('--tuning_result_path', dest='tuning_result_path', default="ml1m/tuning_general")
+    parser.add_argument('--tuning-result-path', dest='tuning_result_path', default="ml1m/tuning_general")
     parser.add_argument('--valid', dest='valid_set', default='Rvalid.npz')
 
     args = parser.parse_args()
