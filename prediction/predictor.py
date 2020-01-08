@@ -1,8 +1,9 @@
-import numpy as np
-from tqdm import tqdm
-import multiprocessing
 from functools import partial
 from multiprocessing import Process
+from tqdm import tqdm
+
+import multiprocessing
+import numpy as np
 
 
 def predict(matrix_U, matrix_V, topK, matrix_Train, bias=None, measure="Cosine", gpu=False):

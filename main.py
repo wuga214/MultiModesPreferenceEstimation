@@ -25,6 +25,7 @@ def main(args):
         mode = "Item-based"
     else:
         mode = "User-based"
+    print("Normalize: {0}".format(args.normalize))
     print("Mode: {0}".format(mode))
     print("Alpha: {0}".format(args.alpha))
     print("Rank: {0}".format(args.rank))
@@ -57,7 +58,7 @@ def main(args):
     if args.item == True:
         RQ, Yt, Bias = models[args.model](R_train, embedded_matrix=np.empty((0)), mode_dim=args.mode_dim,
                                           key_dim=args.key_dim, batch_size=args.batch_size, optimizer=args.optimizer,
-                                          learning_rate=args.learning_rate,
+                                          learning_rate=args.learning_rate, normalize=args.normalize,
                                           iteration=args.iteration, epoch=args.epoch, rank=args.rank,
                                           corruption=args.corruption, gpu_on=args.gpu,
                                           lamb=args.lamb, alpha=args.alpha, seed=args.seed, root=args.root)
@@ -65,7 +66,7 @@ def main(args):
     else:
         Y, RQt, Bias = models[args.model](R_train.T, embedded_matrix=np.empty((0)), mode_dim=args.mode_dim,
                                           key_dim=args.key_dim, batch_size=args.batch_size, optimizer=args.optimizer,
-                                          learning_rate=args.learning_rate,
+                                          learning_rate=args.learning_rate, normalize=args.normalize,
                                           iteration=args.iteration, rank=args.rank,
                                           corruption=args.corruption, gpu_on=args.gpu,
                                           lamb=args.lamb, alpha=args.alpha, seed=args.seed, root=args.root)
@@ -106,6 +107,7 @@ if __name__ == "__main__":
     parser.add_argument('--corruption', dest='corruption', type=check_float_positive, default=0.2)
     parser.add_argument('--data-dir', dest='data_dir', default="datax/")
     parser.add_argument('--disable-item-item', dest='item', action='store_false')
+    parser.add_argument('--disable-item-normalization', dest='normalize', action='store_false')
     parser.add_argument('--disable-validation', dest='validation', action='store_false')
     parser.add_argument('--epoch', dest='epoch', type=check_int_positive, default=10)
     parser.add_argument('--gpu', dest='gpu', action='store_true')
@@ -113,7 +115,7 @@ if __name__ == "__main__":
     parser.add_argument('--key-dimension', dest='key_dim', type=check_int_positive, default=3)
     parser.add_argument('--lambda', dest='lamb', type=check_float_positive, default=0.00001)
     parser.add_argument('--learning-rate', dest='learning_rate', type=check_float_positive, default=0.001)
-    parser.add_argument('--model', dest='model', default="MMUP")
+    parser.add_argument('--model', dest='model', default="MMP")
     parser.add_argument('--mode-dimension', dest='mode_dim', type=check_int_positive, default=5)
     parser.add_argument('--optimizer', dest='optimizer', default="Adam")
     parser.add_argument('--rank', dest='rank', type=check_int_positive, default=100)
