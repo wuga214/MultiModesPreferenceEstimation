@@ -3,7 +3,7 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
-\usepackage[margin=0.0in,paperwidth=3.7in,paperheight=1.8in]{geometry}
+\usepackage[margin=0.0in,paperwidth=9in,paperheight=2.2in]{geometry}
 
 \title{Tikz Test}
 \author{wuga214 }
@@ -13,30 +13,31 @@
 
 \begin{tikzpicture}
 
+###
 %Nodes
-\node[rectangle, thick, minimum width=20mm] (item1) {{item1}};
-\node[rectangle, thick, minimum width=20mm] (item2) [below=0 of item1] {{item2}};
-\node[rectangle, thick, minimum width=20mm] (item3) [below=0 of item2] {{item3}};
-\node[rectangle, thick, minimum width=20mm] (item4) [below=0 of item3] {{item4}};
-\node[rectangle, thick, minimum width=20mm] (item5) [below=0 of item4] {{item5}};
-\node[rectangle, thick, minimum width=20mm] (item6) [below=0 of item5] {{item6}};
-\node[rectangle, thick, minimum width=20mm] (item7) [below=0 of item6] {{item7}};
-\node[rectangle, thick, minimum width=20mm] (item8) [below=0 of item7] {{item8}};
-\node[rectangle, thick, minimum width=20mm] (item9) [below=0 of item8] {{item9}};
+\node[rectangle, thick, minimum width=60mm] (item1) <{item1}>;
+\node[rectangle, thick, minimum width=60mm] (item2) [below=0 of item1] <{item2}>;
+\node[rectangle, thick, minimum width=60mm] (item3) [below=0 of item2] <{item3}>;
+\node[rectangle, thick, minimum width=60mm] (item4) [below=0 of item3] <{item4}>;
+\node[rectangle, thick, minimum width=60mm] (item5) [below=0 of item4] <{item5}>;
+\node[rectangle, thick, minimum width=60mm] (item6) [below=0 of item5] <{item6}>;
+\node[rectangle, thick, minimum width=60mm] (item7) [below=0 of item6] <{item7}>;
+\node[rectangle, thick, minimum width=60mm] (item8) [below=0 of item7] <{item8}>;
+\node[rectangle, thick, minimum width=60mm] (item9) [below=0 of item8] <{item9}>;
 
-\node[rectangle, thick, minimum width=20mm] (preference1) [right=of item3] {{preference1}};
-\node[rectangle, thick, minimum width=20mm] (preference2) [right=of item5] {{preference2}};
-\node[rectangle, thick, minimum width=20mm] (preference3) [right=of item7] {{preference3}};
+\node[rectangle, thick, minimum width=20mm] (preference1) [right=of item3] <{preference1}>;
+\node[rectangle, thick, minimum width=20mm] (preference2) [right=of item5] <{preference2}>;
+\node[rectangle, thick, minimum width=20mm] (preference3) [right=of item7] <{preference3}>;
 
-\node[rectangle, thick, minimum width=20mm] (recommend5) [right= of preference2] {{recommend5}};
-\node[rectangle, thick, minimum width=20mm] (recommend4) [above=0 of recommend5] {{recommend4}};
-\node[rectangle, thick, minimum width=20mm] (recommend3) [above=0 of recommend4] {{recommend3}};
-\node[rectangle, thick, minimum width=20mm] (recommend2) [above=0 of recommend3] {{recommend2}};
-\node[rectangle, thick, minimum width=20mm] (recommend1) [above=0 of recommend2] {{recommend1}};
-\node[rectangle, thick, minimum width=20mm] (recommend6) [below=0 of recommend5] {{recommend6}};
-\node[rectangle, thick, minimum width=20mm] (recommend7) [below=0 of recommend6] {{recommend7}};
-\node[rectangle, thick, minimum width=20mm] (recommend8) [below=0 of recommend7] {{recommend8}};
-\node[rectangle, thick, minimum width=20mm] (recommend9) [below=0 of recommend8] {{recommend9}};
+\node[rectangle, thick, minimum width=60mm] (recommend5) [right= of preference2] <{recommend5}>;
+\node[rectangle, thick, minimum width=60mm] (recommend4) [above=0 of recommend5] <{recommend4}>;
+\node[rectangle, thick, minimum width=60mm] (recommend3) [above=0 of recommend4] <{recommend3}>;
+\node[rectangle, thick, minimum width=60mm] (recommend2) [above=0 of recommend3] <{recommend2}>;
+\node[rectangle, thick, minimum width=60mm] (recommend1) [above=0 of recommend2] <{recommend1}>;
+\node[rectangle, thick, minimum width=60mm] (recommend6) [below=0 of recommend5] <{recommend6}>;
+\node[rectangle, thick, minimum width=60mm] (recommend7) [below=0 of recommend6] <{recommend7}>;
+\node[rectangle, thick, minimum width=60mm] (recommend8) [below=0 of recommend7] <{recommend8}>;
+\node[rectangle, thick, minimum width=60mm] (recommend9) [below=0 of recommend8] <{recommend9}>;
 
 %Lines
 \draw[line width=0.3mm, LimeGreen!{attention_1_1}] (item1.east) -- (preference1.west);
@@ -87,7 +88,7 @@
 \draw[line width=0.3mm, orange!{kernel_2_6}] (preference2.east) -- (recommend6.west);
 \draw[line width=0.3mm, orange!{kernel_2_7}] (preference2.east) -- (recommend7.west);
 \draw[line width=0.3mm, orange!{kernel_2_8}] (preference2.east) -- (recommend8.west);
-\draw[line width=0.3mm, orange!{kernel_2_19}] (preference2.east) -- (recommend9.west);
+\draw[line width=0.3mm, orange!{kernel_2_9}] (preference2.east) -- (recommend9.west);
 
 \draw[line width=0.3mm, cyan!{kernel_3_1}] (preference3.east) -- (recommend1.west);
 \draw[line width=0.3mm, cyan!{kernel_3_2}] (preference3.east) -- (recommend2.west);
@@ -98,6 +99,8 @@
 \draw[line width=0.3mm, cyan!{kernel_3_7}] (preference3.east) -- (recommend7.west);
 \draw[line width=0.3mm, cyan!{kernel_3_8}] (preference3.east) -- (recommend8.west);
 \draw[line width=0.3mm, cyan!{kernel_3_9}] (preference3.east) -- (recommend9.west);
+
+###
 
 \end{tikzpicture}
 

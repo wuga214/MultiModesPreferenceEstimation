@@ -1,4 +1,6 @@
 from tqdm import tqdm
+import datetime
+import os
 import numpy as np
 import scipy.sparse as sparse
 
@@ -48,9 +50,10 @@ def get_attention_example_items(inputs, outputs, size=9):
         input_row = inputs[i]
         output_row = outputs[i]
 
-        input_nonzeros = np.nonzero(input_row)[0]
+        input_nonzeros = np.nonzero(input_row)[1]
         if len(input_nonzeros) < size:
-            input_zeros = np.nonzero(1-input_row)[0]
+
+            input_zeros = np.nonzero(1-input_row.todense())[1]
 
             input_candidate = np.hstack([input_nonzeros, np.random.choice(input_zeros, size-len(input_nonzeros),
                                                                           replace=False)])
@@ -65,22 +68,56 @@ def get_attention_example_items(inputs, outputs, size=9):
     return values
 
 
-def write_latex(samples, attentions, kernels, latex_template):
+def read_template(path):
+    with open(path, 'r') as file:
+        return file.read()
 
-    for instance in samples:
+
+def write_latex(samples, attentions, kernels, item_names, latex_template, path):
+
+    for index, instance in enumerate(samples):
         input = instance[0]
         output = instance[1]
-        attention = attentions[input]
-        kernel = kernels[output]
+
+        attention = attentions[index].T[input]
+        kernel = kernels[index][output]
 
         feeds = dict()
         for i in range(len(input)):
-            feeds['item{0}'.format(i+1)] = input[i]
-            feeds['recommend{0}'.formate(i+1)] = output[i]
+            feeds['item{0}'.format(i+1)] = item_names[input[i]]
+            feeds['recommend{0}'.format(i+1)] = item_names[output[i]]
+
+        feeds['preference1'] = "Preference1"
+        feeds['preference2'] = "Preference2"
+        feeds['preference3'] = "Preference3"
+
+        m, n = attention.shape
+        for i in range(m):
+            for j in range(n):
+                feeds['attention_{0}_{1}'.format(i+1, j+1)] = attention[i][j]
+
+        m = kernel.shape[0]
+
+        for i in range(m):
+            for j in range(3):
+                if j == kernel[i]:
+                    feeds['kernel_{0}_{1}'.format(j+1, i+1)] = 100
+                else:
+                    feeds['kernel_{0}_{1}'.format(j+1, i+1)] = 1
+
+        timestr = datetime.datetime.now().strftime("%H:%M:%S:%f")
+
+        latex_component_list = latex_template.split('###')
+
+        # import ipdb;ipdb.set_trace()
+
+        tex = "".join([latex_component_list[0], latex_component_list[1].format(**feeds), latex_component_list[2]])
+
+        tex = tex.replace("<","{")
+        tex = tex.replace(">","}")
 
 
+        with open(os.path.join(path, '{0}.tex'.format(timestr)), 'w') as the_file:
+            the_file.write(tex)
 
-        tex = latex_template.format(
-        )
-
-        #under construction
+    return
