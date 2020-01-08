@@ -48,7 +48,8 @@ class MultiModesPreferenceEstimation(object):
         item_embeddings = tf.constant(self.item_embeddings, name="item_embeddings")
 
         with tf.variable_scope('keys'):
-            item_key_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.key_dim], stddev=1 / 500.0),
+            item_key_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.key_dim],
+                                                               stddev=1 / 500.0),
                                            name="item_key_weights")
 
             tf.summary.histogram("item_key_weights", item_key_weights)
@@ -57,7 +58,8 @@ class MultiModesPreferenceEstimation(object):
 
             tf.summary.histogram("item_keys", item_keys)
 
-            item_value_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.embed_dim], stddev=1 / 500.0),
+            item_value_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.embed_dim],
+                                                                 stddev=1 / 500.0),
                                              name="item_value_weights")
 
             item_values = tf.matmul(item_embeddings, item_value_weights)
@@ -69,7 +71,8 @@ class MultiModesPreferenceEstimation(object):
 
             tf.summary.histogram("item_values", item_values)
 
-            self.item_query = tf.Variable(tf.truncated_normal([self.input_dim, self.embed_dim], stddev=1 / 500.0),
+            self.item_query = tf.Variable(tf.truncated_normal([self.input_dim, self.embed_dim],
+                                                              stddev=1 / 500.0),
                                              name="item_query_weights")
 
             tf.summary.histogram("item_query", self.item_query)
@@ -86,7 +89,9 @@ class MultiModesPreferenceEstimation(object):
 
             attention = tf.tensordot(tf.multiply(tf.expand_dims(inputs, -1), item_keys), user_keys, axes=[[2], [0]])
             attention = tf.exp(tf.transpose(attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32)), perm=[0, 2, 1]))
+#            attention = tf.multiply(attention/tf.expand_dims(tf.reduce_sum(attention, axis=2), -1), tf.expand_dims(tf.expand_dims(tf.reduce_sum(inputs, axis=1), -1), -1))
             attention = tf.multiply(attention/tf.expand_dims(tf.reduce_sum(attention, axis=2), -1), tf.reduce_sum(inputs))
+
 
             # attention = attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32))
             # attention = tf.nn.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
@@ -107,11 +112,11 @@ class MultiModesPreferenceEstimation(object):
             self.prediction = tf.reduce_max(tf.transpose(prediction, perm=[0, 2, 1]), axis=2)
 
         with tf.variable_scope('loss'):
-            l2_loss = tf.nn.l2_loss(self.item_query)/(tf.cast(self.input_dim*self.embed_dim, dtype=tf.float32))
+            l2_loss = tf.nn.l2_loss(self.item_query)/(tf.cast(self.input_dim * self.embed_dim, dtype=tf.float32))
 
-            loss_weights = 1+self.alpha*tf.log(1+self.inputs) #self.inputs + 0.4*(1-self.inputs)
-            sigmoid_loss = tf.losses.mean_squared_error(labels=self.inputs, predictions=self.prediction, weights=loss_weights)
-            self.loss = tf.reduce_mean(sigmoid_loss) + self.lamb*l2_loss
+            loss_weights = 1 + self.alpha * tf.log(1 + self.inputs) #self.inputs + 0.4*(1-self.inputs)
+            rating_loss = tf.losses.mean_squared_error(labels=self.inputs, predictions=self.prediction, weights=loss_weights)
+            self.loss = tf.reduce_mean(rating_loss) + self.lamb * l2_loss
 
             tf.summary.histogram("label", self.inputs)
 
@@ -206,9 +211,10 @@ def get_pmi_matrix_gpu(matrix, root):
     return sparse.vstack(pmi_matrix)
 
 
-def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3, batch_size=32, optimizer="Adam",
-        learning_rate=0.001, iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False, seed=1, root=1,
-        alpha=1, **unused):
+def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3,
+        batch_size=32, optimizer="Adam", learning_rate=0.001, normalize=True,
+        iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False,
+        seed=1, root=1, alpha=1, **unused):
     """
     PureSVD algorithm
     :param matrix_train: rating matrix
@@ -244,9 +250,16 @@ def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3, batc
 
     Q = Qt.T #*np.sqrt(sigma)
 
-    Q = (Q - np.mean(Q)) / np.std(Q)
+    # TODO: Verify this. Seems better with this.
+    if normalize:
+        Q = (Q - np.mean(Q)) / np.std(Q)
 
-    model = MultiModesPreferenceEstimation(matrix_train.shape[1], rank, mode_dim, key_dim, batch_size,
+
+    model = MultiModesPreferenceEstimation(input_dim=matrix_train.shape[1],
+                                           embed_dim=rank,
+                                           mode_dim=mode_dim,
+                                           key_dim=key_dim,
+                                           batch_size=batch_size,
                                            alpha=alpha,
                                            lamb=lamb,
                                            learning_rate=learning_rate,
