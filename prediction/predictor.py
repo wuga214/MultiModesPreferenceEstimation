@@ -7,6 +7,9 @@ import numpy as np
 
 
 def predict(matrix_U, matrix_V, topK, matrix_Train, bias=None, measure="Cosine", gpu=False):
+    # Disable gpu option since CC doesn't like Cupy
+    gpu = False
+
     if gpu:
         import cupy as cp
         matrix_U = cp.array(matrix_U)
