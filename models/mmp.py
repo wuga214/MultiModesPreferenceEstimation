@@ -143,13 +143,13 @@ class MultiModesPreferenceEstimation(object):
 
     def interprate(self, rating):
         feed_dict = {self.inputs: rating.todense(), self.corruption: 0.}
-        return self.sess.run([self.attention, self.kernel], feed_dict=feed_dict)
+        return self.sess.run([self.attention, self.kernel, self.prediction], feed_dict=feed_dict)
 
 
 def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3,
         batch_size=32, optimizer="Adam", learning_rate=0.001, normalize=True,
         iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False,
-        seed=1, root=1, alpha=1, **unused):
+        seed=1, root=1, alpha=1, return_model=False, **unused):
     """
     PureSVD algorithm
     :param matrix_train: rating matrix
@@ -196,6 +196,10 @@ def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3,
                                            item_embeddings=Q)
     model.train_model(matrix_train, corruption, epoch)
     print("Elapsed: {0}".format(inhour(time.time() - start_time)))
+
+    if return_model:
+        return model
+
     RQ = model.get_RQ(matrix_input)
     Y = model.get_Y()
     #Bias = model.get_Bias()
