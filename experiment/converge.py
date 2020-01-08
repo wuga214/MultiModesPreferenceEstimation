@@ -1,11 +1,11 @@
 import json
 import pandas as pd
 import tensorflow as tf
-from models.predictor import predict
+from prediction.predictor import predict
 from evaluation.metrics import evaluate
 from utils.progress import WorkSplitter
-from utils.optimizers import Regularizer
-from utils.modelnames import autoencoders
+from utils.optimizers import Optimizer
+from utils.modelnames import models
 from utils.io import save_dataframe_csv
 
 
@@ -13,7 +13,7 @@ def converge(Rtrain, Rtest, df, table_path, file_name, epochs=10, gpu_on=True):
     progress = WorkSplitter()
     m, n = Rtrain.shape
 
-    valid_models = autoencoders.keys()
+    valid_models = models.keys()
 
     results = pd.DataFrame(columns=['model', 'rank', 'lambda', 'epoch', 'optimizer'])
 
@@ -32,16 +32,16 @@ def converge(Rtrain, Rtest, df, table_path, file_name, epochs=10, gpu_on=True):
             if 'optimizer' not in row.keys():
                 row['optimizer'] = 'RMSProp'
             try:
-                model = autoencoders[row['model']](n, row['rank'],
-                                                   batch_size=100,
-                                                   lamb=row['lambda'],
-                                                   optimizer=Regularizer[row['optimizer']])
+                model = models[row['model']](n, row['rank'],
+                                             batch_size=100,
+                                             lamb=row['lambda'],
+                                             optimizer=Optimizer[row['optimizer']])
 
             except:
-                model = autoencoders[row['model']](m, n, row['rank'],
-                                                   batch_size=100,
-                                                   lamb=row['lambda'],
-                                                   optimizer=Regularizer[row['optimizer']])
+                model = models[row['model']](m, n, row['rank'],
+                                             batch_size=100,
+                                             lamb=row['lambda'],
+                                             optimizer=Optimizer[row['optimizer']])
 
             batches = model.get_batches(Rtrain, 100)
 

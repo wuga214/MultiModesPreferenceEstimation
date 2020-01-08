@@ -1,15 +1,14 @@
 from fbpca import pca
-from scipy.sparse import vstack, hstack
-from scipy.sparse.linalg import inv
+from scipy.sparse import vstack
 from sklearn.utils.extmath import randomized_svd
 from tqdm import tqdm
 from utils.progress import WorkSplitter, inhour
 from utils.optimizers import Optimizer
 
 import numpy as np
-import scipy.sparse as sparse
 import time
 import tensorflow as tf
+from utils.functions import get_pmi_matrix
 
 
 class MultiModesPreferenceEstimation(object):
@@ -57,10 +56,7 @@ class MultiModesPreferenceEstimation(object):
                                                                  stddev=1 / 500.0),
                                              name="item_value_weights")
             item_values = tf.matmul(item_embeddings, item_value_weights)
-            # item_value_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.embed_dim, self.mode_dim], stddev=1 / 500.0),
-            #                                  name="item_value_weights")
-            #
-            # item_values = tf.tensordot(item_embeddings, item_value_weights, axes=[[1], [0]])
+
             tf.summary.histogram("item_values", item_values)
             self.item_query = tf.Variable(tf.truncated_normal([self.input_dim, self.embed_dim],
                                                               stddev=1 / 500.0),
@@ -73,32 +69,40 @@ class MultiModesPreferenceEstimation(object):
         with tf.variable_scope('encoding'):
             encode_bias = tf.Variable(tf.constant(0., shape=[self.mode_dim, self.embed_dim]), name="Bias")
             attention = tf.tensordot(tf.multiply(tf.expand_dims(inputs, -1), item_keys), user_keys, axes=[[2], [0]])
-            attention = tf.transpose(tf.multiply(tf.exp(attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32))), tf.expand_dims(inputs, -1)) + 0.0001, perm=[0,2,1])
-            attention = attention/tf.expand_dims(tf.reduce_sum(attention, axis=2), -1)
-            # print(attention.shape)
-            # attention = tf.multiply(attention/tf.expand_dims(tf.reduce_sum(attention, axis=2), -1), tf.expand_dims(tf.expand_dims(tf.reduce_sum(inputs, axis=1), -1), -1))
-            # attention = attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32))
-            # attention = tf.nn.softmax(tf.transpose(attention, perm=[0, 2, 1]), axis=2)
-            tf.summary.histogram("attention", attention)
-            # self.user_latent = tf.nn.leaky_relu(tf.reduce_sum(tf.multiply(tf.expand_dims(attention, -1), tf.transpose(item_values,perm=[2,0,1])), axis=2) + encode_bias)
-            self.user_latent = tf.nn.leaky_relu(tf.tensordot(attention, item_values, axes=[[2], [0]]) + encode_bias)
+            attention = tf.transpose(tf.multiply(tf.exp(attention/tf.sqrt(tf.cast(self.key_dim, dtype=tf.float32))),
+                                                 tf.expand_dims(inputs, -1)) + 0.0001, perm=[0,2,1])
+            self.attention = attention/tf.expand_dims(tf.reduce_sum(attention, axis=2), -1)
+
+            tf.summary.histogram("attention", self.attention)
+            self.user_latent = tf.nn.leaky_relu(tf.tensordot(self.attention,
+                                                             item_values,
+                                                             axes=[[2], [0]]) + encode_bias)
+
         with tf.variable_scope('decoding'):
-            prediction = tf.tensordot(self.user_latent, tf.transpose(self.item_query), axes=[[2], [0]])
-            # prediction = tf.transpose(prediction, perm=[0, 2, 1])
-            # attention = tf.nn.softmax(prediction, axis=2)
-            # self.prediction = tf.reduce_sum(tf.multiply(prediction,attention), axis=2)
-            self.prediction = tf.reduce_max(tf.transpose(prediction, perm=[0, 2, 1]), axis=2)
+            prediction = tf.transpose(tf.tensordot(self.user_latent,
+                                                   tf.transpose(self.item_query),
+                                                   axes=[[2], [0]]),
+                                      perm=[0, 2, 1])
+
+            self.prediction = tf.reduce_max(prediction, axis=2)
+            self.kernel = tf.math.argmax(prediction, axis=2)
+
         with tf.variable_scope('loss'):
             l2_loss = tf.nn.l2_loss(self.item_query)/(tf.cast(self.input_dim*self.embed_dim, dtype=tf.float32))
-            loss_weights = 1+self.alpha*tf.log(1+self.inputs) #self.inputs + 0.4*(1-self.inputs)
-            rating_loss = tf.losses.mean_squared_error(labels=self.inputs, predictions=self.prediction, weights=loss_weights)
+            loss_weights = 1+self.alpha*tf.log(1+self.inputs)
+            rating_loss = tf.losses.mean_squared_error(labels=self.inputs,
+                                                       predictions=self.prediction,
+                                                       weights=loss_weights)
             self.loss = tf.reduce_mean(rating_loss) + self.lamb*l2_loss
             tf.summary.histogram("label", self.inputs)
             tf.summary.histogram("prediction", self.prediction)
             tf.summary.scalar("loss", self.loss)
+
         self.summaries = tf.summary.merge_all()
+
         with tf.variable_scope('optimizer'):
             self.train = self.optimizer(learning_rate=self.learning_rate).minimize(self.loss)
+
     def get_batches(self, rating_matrix, batch_size):
         remaining_size = rating_matrix.shape[0]
         batch_index = 0
@@ -111,6 +115,7 @@ class MultiModesPreferenceEstimation(object):
             batch_index += 1
             remaining_size -= batch_size
         return batches
+
     def train_model(self, rating_matrix, corruption, epoch=100, batches=None, **unused):
         if batches is None:
             batches = self.get_batches(rating_matrix, self.batch_size)
@@ -123,6 +128,7 @@ class MultiModesPreferenceEstimation(object):
             feed_dict = {self.inputs: batches[0].todense(), self.corruption: corruption}
             summ = self.sess.run(self.summaries, feed_dict=feed_dict)
             self.writer.add_summary(summ, global_step=i)
+
     def get_RQ(self, rating_matrix):
         batches = self.get_batches(rating_matrix, self.batch_size)
         RQ = []
@@ -131,40 +137,15 @@ class MultiModesPreferenceEstimation(object):
             encoded = self.sess.run(self.user_latent, feed_dict=feed_dict)
             RQ.append(encoded)
         return np.vstack(RQ)
+
     def get_Y(self):
         return self.sess.run(self.item_query)
-def get_pmi_matrix(matrix, root):
-    rows, cols = matrix.shape
-    item_rated = matrix.sum(axis=0)
-    # user_rated = matrix.sum(axis=1)
-    nnz = matrix.nnz
-    pmi_matrix = []
-    for i in tqdm(range(rows)):
-        row_index, col_index = matrix[i].nonzero()
-        if len(row_index) > 0:
-            # import ipdb; ipdb.set_trace()
-            # values = np.asarray(user_rated[i].dot(item_rated)[:, col_index]).flatten()
-            values = np.asarray(item_rated[:, col_index]).flatten()
-            values = np.maximum(np.log(rows/np.power(values, root)), 0)
-            pmi_matrix.append(sparse.coo_matrix((values, (row_index, col_index)), shape=(1, cols)))
-        else:
-            pmi_matrix.append(sparse.coo_matrix((1, cols)))
-    return sparse.vstack(pmi_matrix)
-def get_pmi_matrix_gpu(matrix, root):
-    import cupy as cp
-    rows, cols = matrix.shape
-    item_rated = cp.array(matrix.sum(axis=0))
-    pmi_matrix = []
-    nnz = matrix.nnz
-    for i in tqdm(xrange(rows)):
-        row_index, col_index = matrix[i].nonzero()
-        if len(row_index) > 0:
-            values = cp.asarray(item_rated[:, col_index]).flatten()
-            values = cp.maximum(cp.log(rows/cp.power(values, root)), 0)
-            pmi_matrix.append(sparse.coo_matrix((cp.asnumpy(values), (row_index, col_index)), shape=(1, cols)))
-        else:
-            pmi_matrix.append(sparse.coo_matrix((1, cols)))
-    return sparse.vstack(pmi_matrix)
+
+    def interprate(self, rating):
+        feed_dict = {self.inputs: rating.todense(), self.corruption: 0.}
+        return self.sess.run([self.attention, self.kernel], feed_dict=feed_dict)
+
+
 def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3,
         batch_size=32, optimizer="Adam", learning_rate=0.001, normalize=True,
         iteration=4, epoch=20, lamb=100, rank=200, corruption=0.5, fb=False,
