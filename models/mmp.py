@@ -8,8 +8,8 @@ from utils.optimizers import Optimizer
 
 import numpy as np
 import scipy.sparse as sparse
-import time
 import tensorflow as tf
+import time
 
 
 class MultiModesPreferenceEstimation(object):
