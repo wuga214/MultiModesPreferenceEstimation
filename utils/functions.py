@@ -41,7 +41,7 @@ def get_pmi_matrix_gpu(matrix, root):
     return sparse.vstack(pmi_matrix)
 
 
-def get_attention_example_items(inputs, outputs, size=9):
+def get_attention_example_items(inputs, outputs, labels, size=9):
     rows, cols = inputs.shape
 
     values = []
@@ -49,8 +49,10 @@ def get_attention_example_items(inputs, outputs, size=9):
     for i in tqdm(range(rows)):
         input_row = inputs[i]
         output_row = outputs[i]
+        label_row = labels[i]
 
         input_nonzeros = np.nonzero(input_row)[1]
+        label_nonzeros = np.nonzero(label_row)[1]
         if len(input_nonzeros) < size:
 
             input_zeros = np.nonzero(1-input_row.todense())[1]
@@ -63,9 +65,11 @@ def get_attention_example_items(inputs, outputs, size=9):
 
         output_candidate = np.argsort(output_row)[::-1][:size+len(input_nonzeros)]
 
-        output_candidate = np.delete(output_candidate, np.isin(output_candidate, input_nonzeros).nonzero()[0])
+        output_candidate = np.delete(output_candidate, np.isin(output_candidate, input_nonzeros).nonzero()[0])[:size]
 
-        values.append([input_candidate, output_candidate])
+        overlap = [1 if x in label_nonzeros else 0 for x in output_candidate]
+
+        values.append([input_candidate, output_candidate, overlap])
 
     return values
 
@@ -80,6 +84,7 @@ def write_latex(samples, attentions, kernels, item_names, latex_template, path):
     for index, instance in enumerate(samples):
         input = instance[0]
         output = instance[1]
+        overlap = instance[2]
 
         attention = attentions[index].T[input]
         kernel = kernels[index][output]
@@ -90,6 +95,7 @@ def write_latex(samples, attentions, kernels, item_names, latex_template, path):
         for i in range(len(input)):
             feeds['item{0}'.format(i+1)] = item_names[input[i]]
             feeds['recommend{0}'.format(i+1)] = item_names[output[i]]
+            feeds['overlap{0}'.format(i+1)] = overlap[i]*30
 
         feeds['preference1'] = "Preference1"
         feeds['preference2'] = "Preference2"
@@ -115,10 +121,15 @@ def write_latex(samples, attentions, kernels, item_names, latex_template, path):
 
         # import ipdb;ipdb.set_trace()
 
-        tex = "".join([latex_component_list[0], latex_component_list[1].format(**feeds), latex_component_list[2]])
+        modified_component = latex_component_list[1].format(**feeds)
 
-        tex = tex.replace("<","{")
-        tex = tex.replace(">","}")
+        modified_component = "\n".join([x for x in modified_component.split('\n') if "!0]" not in x])
+
+        tex = "".join([latex_component_list[0], modified_component, latex_component_list[2]])
+
+        tex = tex.replace("<", "{")
+        tex = tex.replace(">", "}")
+        tex = tex.replace("&", "")
 
 
         with open(os.path.join(path, '{0}.tex'.format(timestr)), 'w') as the_file:

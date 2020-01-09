@@ -2,11 +2,120 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67730fb7-384b-49ab-98b1-6b78abd786f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment/attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiment/attention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/functions.py" afterDir="false" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/attention2.tex" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/Tikz_Test1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/Tikz_Test2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/Tikz_Test3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:088436.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:088694.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:088876.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089049.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089252.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089443.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089665.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089927.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:090229.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:090542.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:090774.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:091055.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:091387.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:091575.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:091869.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:092112.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:092400.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:092790.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:093156.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:093391.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:093615.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:093878.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:094238.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:094563.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:094763.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:095183.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:095459.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:095843.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:096096.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:096305.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:096517.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:096795.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:097084.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:097301.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:097612.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:097932.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:098231.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:098449.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:098710.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099015.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099213.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099494.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099746.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099974.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:100190.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:100402.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:100670.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101040.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101263.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101461.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101664.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101953.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:102401.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:102697.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:103027.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:103335.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:103548.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:103916.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:104188.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:104447.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:104662.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:104986.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:105243.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:105527.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:105813.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:106045.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:106284.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:106505.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:106796.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107027.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107221.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107421.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107723.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107979.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:108232.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:108483.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:108712.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:108974.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:109190.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:109388.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:109667.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:109882.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:110159.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:110418.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:110622.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:111003.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:111348.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:111660.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:111919.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:112224.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:112468.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:112772.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:113088.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:113285.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:113487.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:113741.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:114024.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:114228.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:114481.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:114739.tex" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MultiModesPreferenceEstimation.iml" afterPath="$PROJECT_DIR$/.idea/MultiModesPreferenceEstimation.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experiment/attention.py" afterPath="$PROJECT_DIR$/experiment/attention.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interpretation_analysis.py" afterPath="$PROJECT_DIR$/interpretation_analysis.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/attention.tex" afterPath="$PROJECT_DIR$/templates/attention.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/functions.py" afterPath="$PROJECT_DIR$/utils/functions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,41 +159,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="modelnames.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1069">
-              <caret line="109" column="53" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Reproduce Final Tables and Plots.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reproduce_general_results.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+            <state relative-caret-position="427">
+              <caret line="109" column="53" lean-forward="false" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="53" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+                <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/experiment/attention.py">
+      <file leaf-file-name="trivial_scripts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/trivial_scripts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mmp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/mmp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2312">
+              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="converge.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/experiment/converge.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -92,72 +218,55 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/mmp.py">
+      <file leaf-file-name="attention.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/experiment/attention.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1334">
-              <caret line="145" column="44" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="44" />
+            <state relative-caret-position="442">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interpretation_analysis.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="attention2.tex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/attention2.tex">
+          <provider selected="true" editor-type-id="LaTeXFileEditor">
+            <state />
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="90" column="63" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="63" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <marker date="1578531555508" expanded="true" signature="2493:2557" ph="..." />
-              </folding>
+            <state relative-caret-position="767">
+              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="769">
-              <caret line="59" column="97" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/io.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="attention.tex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/attention.tex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-121">
-              <caret line="27" column="56" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="56" />
+            <state relative-caret-position="527">
+              <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
               <folding>
-                <element signature="e#260#363#0" expanded="true" />
-                <element signature="e#278#363#0" expanded="true" />
+                <element signature="e#258#415#0" expanded="true" />
+                <element signature="e#276#415#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="interpretation_analysis.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interpretation_analysis.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -183,9 +292,11 @@
       <find>tex_path</find>
       <find>}}</find>
       <find>preference1</find>
+      <find>inner sep=0pt</find>
     </findStrings>
     <replaceStrings>
       <replace>}</replace>
+      <replace>inner sep=5pt</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -203,10 +314,10 @@
         <option value="$PROJECT_DIR$/experiment/converge.py" />
         <option value="$PROJECT_DIR$/models/mmp.py" />
         <option value="$PROJECT_DIR$/utils/io.py" />
-        <option value="$PROJECT_DIR$/templates/attention.tex" />
-        <option value="$PROJECT_DIR$/interpretation_analysis.py" />
-        <option value="$PROJECT_DIR$/experiment/attention.py" />
         <option value="$PROJECT_DIR$/utils/functions.py" />
+        <option value="$PROJECT_DIR$/interpretation_analysis.py" />
+        <option value="$PROJECT_DIR$/templates/attention.tex" />
+        <option value="$PROJECT_DIR$/experiment/attention.py" />
       </list>
     </option>
   </component>
@@ -223,7 +334,17 @@
     <option name="height" value="1068" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -247,11 +368,6 @@
             <path>
               <item name="MultiModesPreferenceEstimation" type="b2602c69:ProjectViewProjectNode" />
               <item name="MultiModesPreferenceEstimation" type="462c0819:PsiDirectoryNode" />
-              <item name="prediction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MultiModesPreferenceEstimation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MultiModesPreferenceEstimation" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,6 +380,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -275,6 +392,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/prediction" />
     </key>
@@ -291,6 +409,9 @@
       </list>
     </option>
   </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -305,31 +426,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1984" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="1145" y="363" width="2495" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10779436" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Data View" order="4" />
-      <window_info anchor="right" id="SciView" order="5" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10657411" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,139 +456,445 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/mmp2.py" />
-    <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="1955">
+          <caret line="124" column="74" lean-forward="true" selection-start-line="124" selection-start-column="74" selection-end-line="124" selection-end-column="74" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+            <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/progress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/trivial_scripts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment/converge.py">
+    <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="86" />
+        <state relative-caret-position="493">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1578496892040" expanded="true" signature="294:882" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/optimizers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="12" />
+        <state relative-caret-position="68">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1069">
-          <caret line="109" column="53" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Reproduce Final Tables and Plots.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="1819">
+          <caret line="116" column="95" lean-forward="false" selection-start-line="116" selection-start-column="95" selection-end-line="116" selection-end-column="95" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+            <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interpretation_analysis.py">
+    <entry file="file://$PROJECT_DIR$/utils/progress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reproduce_general_results.py">
+    <entry file="file://$PROJECT_DIR$/utils/trivial_scripts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="59" column="97" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/attention.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-121">
-          <caret line="27" column="56" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="56" />
+        <state relative-caret-position="493">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
           <folding>
-            <element signature="e#260#363#0" expanded="true" />
-            <element signature="e#278#363#0" expanded="true" />
+            <marker date="1578496892040" expanded="true" signature="294:882" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/functions.py">
+    <entry file="file://$PROJECT_DIR$/utils/optimizers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="90" column="63" selection-start-line="90" selection-start-column="63" selection-end-line="90" selection-end-column="63" />
+        <state relative-caret-position="68">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="83" column="86" lean-forward="true" selection-start-line="83" selection-start-column="86" selection-end-line="83" selection-end-column="86" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1578531555508" expanded="true" signature="2493:2557" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="63" column="40" lean-forward="false" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+            <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="294:882" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/mmp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1334">
-          <caret line="145" column="44" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="44" />
+        <state relative-caret-position="3281">
+          <caret line="204" column="7" lean-forward="false" selection-start-line="204" selection-start-column="7" selection-end-line="204" selection-end-column="7" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment/attention.py">
+    <entry file="file://$PROJECT_DIR$/models/mmp2.py" />
+    <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="93" column="41" lean-forward="false" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="41" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+            <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="294:882" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp2.py" />
+    <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="97" column="87" lean-forward="false" selection-start-line="97" selection-start-column="87" selection-end-line="97" selection-end-column="87" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+            <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="294:882" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp2.py" />
+    <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="81" column="36" lean-forward="false" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+            <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="294:882" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp2.py" />
+    <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="81" column="36" lean-forward="true" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+            <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="33" column="65" lean-forward="false" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="294:882" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp2.py" />
+    <entry file="file://$PROJECT_DIR$/models/mmp2.py" />
+    <entry file="file://$PROJECT_DIR$/prediction/predictor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="37" column="65" lean-forward="false" selection-start-line="37" selection-start-column="65" selection-end-line="37" selection-end-column="65" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="294:882" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/optimizers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/progress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/trivial_scripts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/modelnames.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiment/converge.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/attention2.tex">
+      <provider selected="true" editor-type-id="LaTeXFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="109" column="53" lean-forward="false" selection-start-line="109" selection-start-column="40" selection-end-line="109" selection-end-column="53" />
+          <folding>
+            <marker date="1578496892040" expanded="true" signature="360:831" ph="..." />
+            <marker date="1578496892040" expanded="true" signature="5801:6674" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/functions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interpretation_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/attention.tex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="46" column="28" lean-forward="false" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+          <folding>
+            <element signature="e#258#415#0" expanded="true" />
+            <element signature="e#276#415#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiment/attention.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

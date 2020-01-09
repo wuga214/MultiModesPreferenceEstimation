@@ -1,13 +1,8 @@
-from experiment.general import general
-from plots.rec_plots import precision_recall_curve
 import numpy as np
 from utils.io import load_numpy, load_dataframe_csv
-from utils.modelnames import models
 from experiment.attention import attention
 
 import argparse
-import pandas as pd
-import timeit
 
 
 def main(args):
@@ -27,9 +22,6 @@ def main(args):
               gpu_on=True)
 
 
-
-
-
 if __name__ == "__main__":
     # Commandline arguments
     parser = argparse.ArgumentParser(description="Interpretation Analysis")
@@ -39,7 +31,7 @@ if __name__ == "__main__":
     parser.add_argument('--tex-path', dest='tex_path', default="texs")
     parser.add_argument('--index', dest='index', default="Index.npy")
     parser.add_argument('--item-names', dest='names', default="ml-1m/movies.dat")
-    parser.add_argument('--fig-path', dest='fig_path', default="figs")
+    parser.add_argument('--fig-path', dest='fig_path', default="figs/attention_demos")
     parser.add_argument('--table-path', dest='tab_path', default="tables")
     parser.add_argument('--template-path', dest='template_path', default="templates/attention.tex")
     parser.add_argument('--test', dest='test_set', default='Rtest.npz')

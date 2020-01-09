@@ -1,3 +1,4 @@
+import os
 import json
 import pandas as pd
 import numpy as np
@@ -6,6 +7,7 @@ from utils.progress import WorkSplitter
 from utils.optimizers import Optimizer
 from utils.modelnames import models
 from utils.functions import get_attention_example_items, write_latex,read_template
+import glob
 
 
 def attention(Rtrain, Rtest, index_map, item_names, latex_path, fig_path, settings_df, template_path, gpu_on=True):
@@ -42,9 +44,9 @@ def attention(Rtrain, Rtest, index_map, item_names, latex_path, fig_path, settin
                                           root=row['root'],
                                           return_model=True)
 
-        attentions, kernels, predictions = mmup_model.interprate(Rtest[:100])
+        attentions, kernels, predictions = mmup_model.interprate(Rtrain[:100])
 
-        visualization_samples = get_attention_example_items(Rtest[:100], predictions, 9)
+        visualization_samples = get_attention_example_items(Rtrain[:100], predictions, Rtest[:100], 9)
 
         items = []
 
@@ -60,7 +62,21 @@ def attention(Rtrain, Rtest, index_map, item_names, latex_path, fig_path, settin
 
         latex_template = read_template(template_path)
 
+        cmd = "rm {0}/*.tex".format(latex_path)
+        os.system(cmd)
+
         write_latex(visualization_samples, attentions, kernels, items, latex_template, latex_path)
+
+        tex_files = glob.glob(latex_path + "/*.tex")
+
+        for tex in tex_files:
+            cmd = "pdflatex -halt-on-error -output-directory {0} {1}".format(fig_path, tex)
+            os.system(cmd)
+
+        cmd = "rm {0}/*.log".format(fig_path)
+        os.system(cmd)
+        cmd = "rm {0}/*.aux".format(fig_path)
+        os.system(cmd)
 
         mmup_model.sess.close()
         tf.reset_default_graph()
