@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage[margin=0.0in,paperwidth=9in,paperheight=2.2in]{geometry}
+
+\title{Tikz Test}
+\author{wuga214 }
+\date{January 2020}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+
+
+%Nodes
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Star Wars: Episode V - The Empire Strikes Back (1980)}}] (item1) {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Star Wars: Episode VI - Return of the Jedi (1983)}}] (item2) [below=0 of item1] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Fugitive, The (1993)}}] (item3) [below=0 of item2] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Aliens (1986)}}] (item4) [below=0 of item3] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Clerks (1994)}}] (item5) [below=0 of item4] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Blues Brothers, The (1980)}}] (item6) [below=0 of item5] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Planet of the Apes (1968)}}] (item7) [below=0 of item6] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Rocky (1976)}}] (item8) [below=0 of item7] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Saving Private Ryan (1998)}}] (item9) [below=0 of item8] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm] (obs) [above=0.2 of item1] {Observed Interactions};
+
+\node[rectangle, thick, minimum width=20mm] (preference1) [right=of item3] {Preference1};
+\node[rectangle, thick, minimum width=20mm] (preference2) [right=of item5] {Preference2};
+\node[rectangle, thick, minimum width=20mm] (preference3) [right=of item7] {Preference3};
+\node[rectangle, thick, minimum height=4mm, minimum width=20mm] (usr) [right= of obs, above= of preference1] {User Preferences};
+
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Matrix, The (1999)}}] (recommend5) [right= of preference2] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Terminator, The (1984)}}] (recommend4) [above=0 of recommend5] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Godfather, The (1972)}}] (recommend3) [above=0 of recommend4] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Die Hard (1988)}}] (recommend2) [above=0 of recommend3] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Star Wars: Episode IV - A New Hope (1977)}}] (recommend1) [above=0 of recommend2] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Princess Bride, The (1987)}}] (recommend6) [below=0 of recommend5] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Braveheart (1995)}}] (recommend7) [below=0 of recommend6] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Alien (1979)}}] (recommend8) [below=0 of recommend7] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Terminator 2: Judgment Day (1991)}}] (recommend9) [below=0 of recommend8] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm] (pdt) [right= of usr, above=0.2 of recommend1] {Recommendations};
+
+%Lines
+\draw[line width=0.3mm, LimeGreen!18.8870201111] (item1.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!18.8870201111] (item2.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!18.8870201111] (item3.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!18.8870201111] (item4.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!99.9989471436] (item5.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!87.8312530518] (item6.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!32.2700233459] (item7.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!25.4908676147] (item8.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!18.8870201111] (item9.east) -- (preference1.west);
+
+\draw[line width=0.3mm, orange!33.336265564] (item1.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!33.336265564] (item2.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!33.336265564] (item3.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!33.336265564] (item4.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!33.336265564] (item5.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!33.336265564] (item6.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!33.336265564] (item7.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!33.336265564] (item8.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!33.336265564] (item9.east) -- (preference2.west);
+
+\draw[line width=0.3mm, cyan!63.4693908691] (item1.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!48.7411727905] (item2.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!34.7054367065] (item3.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!56.1083488464] (item4.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!21.2674274445] (item5.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!0.0] (item6.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!15.1657524109] (item7.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!23.2512779236] (item8.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!80.1835784912] (item9.east) -- (preference3.west);
+
+
+
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend1.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend2.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend3.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend4.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend5.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend6.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend7.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend8.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend9.west);
+
+
+
+\end{tikzpicture}
+
+\end{document}

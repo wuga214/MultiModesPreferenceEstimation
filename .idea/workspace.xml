@@ -2,117 +2,202 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67730fb7-384b-49ab-98b1-6b78abd786f9" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/attention2.tex" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/Tikz_Test1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/Tikz_Test2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/Tikz_Test3.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:088436.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:088694.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:088876.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089049.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089252.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089443.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089665.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:089927.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:090229.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:090542.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:090774.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:091055.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:091387.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:091575.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:091869.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:092112.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:092400.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:092790.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:093156.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:093391.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:093615.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:093878.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:094238.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:094563.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:094763.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:095183.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:095459.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:095843.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:096096.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:096305.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:096517.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:096795.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:097084.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:097301.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:097612.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:097932.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:098231.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:098449.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:098710.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099015.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099213.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099494.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099746.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:099974.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:100190.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:100402.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:100670.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101040.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101263.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101461.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101664.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:101953.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:102401.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:102697.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:103027.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:103335.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:103548.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:103916.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:104188.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:104447.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:104662.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:104986.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:105243.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:105527.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:105813.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:106045.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:106284.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:106505.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:106796.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107027.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107221.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107421.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107723.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:107979.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:108232.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:108483.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:108712.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:108974.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:109190.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:109388.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:109667.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:109882.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:110159.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:110418.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:110622.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:111003.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:111348.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:111660.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:111919.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:112224.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:112468.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:112772.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:113088.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:113285.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:113487.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:113741.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:114024.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:114228.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:114481.tex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/20:09:25:114739.tex" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MultiModesPreferenceEstimation.iml" afterPath="$PROJECT_DIR$/.idea/MultiModesPreferenceEstimation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:698354.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:699779.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:700431.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:701027.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:701590.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:702158.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:702853.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:703410.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:703962.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:704999.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:705326.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:705664.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:705994.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:706302.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:706577.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:706853.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:707128.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:707404.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:707678.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:707956.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:708233.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:708516.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:708791.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:709064.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:709339.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:709614.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:709887.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:710439.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:710747.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:711101.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:711457.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:712067.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:712354.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:712660.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:712942.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:713242.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:713527.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:713810.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:714091.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:714376.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:714661.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:714948.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:715238.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:715522.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:715801.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:716083.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:716366.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:716669.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:716968.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:717284.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:717536.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:717783.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:718043.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:718290.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:718537.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:718790.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:719124.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:719378.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:719625.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:719881.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:720131.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:720377.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:720643.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:720896.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:721147.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:721396.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:721645.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:722140.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:722386.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:722630.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:723130.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:723623.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:723870.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:724119.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:724368.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:724645.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:724892.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:725141.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:725394.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:725640.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:725892.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:726141.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:726391.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:726639.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:726888.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:727134.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:727379.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:727626.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:727885.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:728175.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:728469.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:728717.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/figs/attention_demos/02:36:34:728960.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:698354.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:699154.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:699779.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:700431.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:701027.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:701590.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:702158.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:702853.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:703410.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:703962.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:704564.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:704999.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:705326.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:705664.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:705994.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:706302.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:706577.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:706853.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:707128.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:707404.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:707678.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:707956.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:708233.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:708516.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:708791.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:709064.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:709339.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:709614.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:709887.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:710162.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:710439.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:710747.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:711101.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:711457.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:711761.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:712067.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:712354.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:712660.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:712942.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:713242.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:713527.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:713810.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:714091.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:714376.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:714661.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:714948.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:715238.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:715522.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:715801.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:716083.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:716366.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:716669.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:716968.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:717284.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:717536.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:717783.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:718043.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:718290.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:718537.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:718790.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:719124.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:719378.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:719625.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:719881.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:720131.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:720377.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:720643.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:720896.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:721147.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:721396.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:721645.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:721892.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:722140.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:722386.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:722630.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:722882.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:723130.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:723376.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:723623.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:723870.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:724119.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:724368.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:724645.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:724892.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:725141.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:725394.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:725640.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:725892.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:726141.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:726391.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:726639.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:726888.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:727134.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:727379.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:727626.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:727885.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:728175.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:728469.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:728717.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/texs/02:36:34:728960.tex" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experiment/attention.py" afterPath="$PROJECT_DIR$/experiment/attention.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interpretation_analysis.py" afterPath="$PROJECT_DIR$/interpretation_analysis.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/attention.tex" afterPath="$PROJECT_DIR$/templates/attention.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/functions.py" afterPath="$PROJECT_DIR$/utils/functions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -221,8 +306,8 @@
       <file leaf-file-name="attention.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/experiment/attention.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="595">
+              <caret line="50" column="101" lean-forward="false" selection-start-line="50" selection-start-column="101" selection-end-line="50" selection-end-column="101" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -263,8 +348,8 @@
       <file leaf-file-name="interpretation_analysis.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interpretation_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state relative-caret-position="306">
+              <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -315,8 +400,8 @@
         <option value="$PROJECT_DIR$/models/mmp.py" />
         <option value="$PROJECT_DIR$/utils/io.py" />
         <option value="$PROJECT_DIR$/utils/functions.py" />
-        <option value="$PROJECT_DIR$/interpretation_analysis.py" />
         <option value="$PROJECT_DIR$/templates/attention.tex" />
+        <option value="$PROJECT_DIR$/interpretation_analysis.py" />
         <option value="$PROJECT_DIR$/experiment/attention.py" />
       </list>
     </option>
@@ -868,16 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interpretation_analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/attention.tex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -889,10 +964,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/interpretation_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/experiment/attention.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="595">
+          <caret line="50" column="101" lean-forward="false" selection-start-line="50" selection-start-column="101" selection-end-line="50" selection-end-column="101" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

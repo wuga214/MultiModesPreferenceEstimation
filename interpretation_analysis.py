@@ -13,12 +13,10 @@ def main(args):
     R_valid = load_numpy(path=args.data_dir, name=args.valid_set)
     R_test = load_numpy(path=args.data_dir, name=args.test_set)
 
-    R_train = R_train + R_valid
-
     index_map = np.load(args.data_dir+args.index)
     item_names = load_dataframe_csv(args.data_dir+args.names, delimiter="::", names=['ItemID', 'Name', 'Category'])
 
-    attention(R_train, R_test, index_map, item_names, args.tex_path, args.fig_path, settings_df, args.template_path,
+    attention(R_train, R_valid, R_test, index_map, item_names, args.tex_path, args.fig_path, settings_df, args.template_path,
               gpu_on=True)
 
 

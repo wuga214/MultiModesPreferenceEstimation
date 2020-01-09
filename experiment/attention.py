@@ -10,9 +10,11 @@ from utils.functions import get_attention_example_items, write_latex,read_templa
 import glob
 
 
-def attention(Rtrain, Rtest, index_map, item_names, latex_path, fig_path, settings_df, template_path, gpu_on=True):
+def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path, settings_df, template_path, gpu_on=True):
     progress = WorkSplitter()
     m, n = Rtrain.shape
+
+    Rtest = Rvalid + Rtest
 
 
     for idx, row in settings_df.iterrows():
@@ -44,9 +46,9 @@ def attention(Rtrain, Rtest, index_map, item_names, latex_path, fig_path, settin
                                           root=row['root'],
                                           return_model=True)
 
-        attentions, kernels, predictions = mmup_model.interprate(Rtrain[:100])
+        attentions, kernels, predictions = mmup_model.interprate(Rtrain[100:500])
 
-        visualization_samples = get_attention_example_items(Rtrain[:100], predictions, Rtest[:100], 9)
+        visualization_samples = get_attention_example_items(Rtrain[100:500], predictions, Rtest[100:500], 9)
 
         items = []
 
@@ -63,6 +65,9 @@ def attention(Rtrain, Rtest, index_map, item_names, latex_path, fig_path, settin
         latex_template = read_template(template_path)
 
         cmd = "rm {0}/*.tex".format(latex_path)
+        os.system(cmd)
+
+        cmd = "rm {0}/*.pdf".format(fig_path)
         os.system(cmd)
 
         write_latex(visualization_samples, attentions, kernels, items, latex_template, latex_path)

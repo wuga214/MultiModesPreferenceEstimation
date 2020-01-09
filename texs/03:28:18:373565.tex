@@ -1,0 +1,93 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage[margin=0.0in,paperwidth=9in,paperheight=2.2in]{geometry}
+
+\title{Tikz Test}
+\author{wuga214 }
+\date{January 2020}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+
+
+%Nodes
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Real Genius (1985)}}] (item1) {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Eyes Wide Shut (1999)}}] (item2) [below=0 of item1] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Shining, The (1980)}}] (item3) [below=0 of item2] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Kids (1995)}}] (item4) [below=0 of item3] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Trainspotting (1996)}}] (item5) [below=0 of item4] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Twelve Monkeys (1995)}}] (item6) [below=0 of item5] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Delicatessen (1991)}}] (item7) [below=0 of item6] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{City of Lost Children, The (1995)}}] (item8) [below=0 of item7] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={[anchor=east, inner sep=5pt]east:{Clockwork Orange, A (1971)}}] (item9) [below=0 of item8] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm] (obs) [above=0.2 of item1] {Observed Interactions};
+
+\node[rectangle, thick, minimum width=20mm] (preference1) [right=of item3] {Preference1};
+\node[rectangle, thick, minimum width=20mm] (preference2) [right=of item5] {Preference2};
+\node[rectangle, thick, minimum width=20mm] (preference3) [right=of item7] {Preference3};
+\node[rectangle, thick, minimum height=4mm, minimum width=20mm] (usr) [right= of obs, above= of preference1] {User Preferences};
+
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Matrix, The (1999)}}] (recommend5) [right= of preference2] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Close Encounters of the Third Kind (1977)}}] (recommend4) [above=0 of recommend5] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Alien (1979)}}] (recommend3) [above=0 of recommend4] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Star Wars: Episode IV - A New Hope (1977)}}] (recommend2) [above=0 of recommend3] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!30, right color=white, label={[anchor=west, inner sep=5pt]west:{Brazil (1985)}}] (recommend1) [above=0 of recommend2] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Star Wars: Episode V - The Empire Strikes Back (1980)}}] (recommend6) [below=0 of recommend5] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!30, right color=white, label={[anchor=west, inner sep=5pt]west:{Pi (1998)}}] (recommend7) [below=0 of recommend6] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Apocalypse Now (1979)}}] (recommend8) [below=0 of recommend7] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!0, right color=white, label={[anchor=west, inner sep=5pt]west:{Sleepy Hollow (1999)}}] (recommend9) [below=0 of recommend8] {};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm] (pdt) [right= of usr, above=0.2 of recommend1] {Recommendations};
+
+%Lines
+\draw[line width=0.3mm, LimeGreen!41.2735862732] (item1.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!40.9972686768] (item2.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!77.5348968506] (item3.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!23.7912731171] (item4.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!18.0271720886] (item5.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!16.7223701477] (item6.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!17.8499908447] (item7.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!19.0356178284] (item8.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!16.9833526611] (item9.east) -- (preference1.west);
+
+\draw[line width=0.3mm, orange!30.3295021057] (item1.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!30.3295021057] (item2.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!30.3295021057] (item3.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!30.3295021057] (item4.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!30.3295021057] (item5.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!30.3295021057] (item6.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!30.3295021057] (item7.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!30.3295021057] (item8.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!30.3295021057] (item9.east) -- (preference2.west);
+
+\draw[line width=0.3mm, cyan!0.0] (item1.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!14.2770547867] (item2.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!14.0651273727] (item3.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!1.41023159027] (item4.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!24.5323867798] (item5.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!99.9992294312] (item6.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!8.27424716949] (item7.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!15.4532566071] (item8.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!53.3806724548] (item9.east) -- (preference3.west);
+
+\draw[line width=0.3mm, LimeGreen!100] (preference1.east) -- (recommend9.west);
+
+
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend1.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend2.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend3.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend4.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend5.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend6.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend7.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend8.west);
+
+
+
+\end{tikzpicture}
+
+\end{document}
