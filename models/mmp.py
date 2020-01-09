@@ -2,13 +2,13 @@ from fbpca import pca
 from scipy.sparse import vstack
 from sklearn.utils.extmath import randomized_svd
 from tqdm import tqdm
-from utils.progress import WorkSplitter, inhour
+from utils.functions import get_pmi_matrix
 from utils.optimizers import Optimizer
+from utils.progress import WorkSplitter, inhour
 
 import numpy as np
-import time
 import tensorflow as tf
-from utils.functions import get_pmi_matrix
+import time
 
 
 class MultiModesPreferenceEstimation(object):
@@ -184,6 +184,11 @@ def mmp(matrix_train, embedded_matrix=np.empty((0)), mode_dim=5, key_dim=3,
     # TODO: Verify this. Seems better with this.
     if normalize:
         Q = (Q - np.mean(Q)) / np.std(Q)
+
+    # Type has to match with Tensorflow graph implementation which uses float32
+    if isinstance(Q[0][0], np.float64):
+        Q = np.float32(Q)
+
     model = MultiModesPreferenceEstimation(input_dim=matrix_train.shape[1],
                                            embed_dim=rank,
                                            mode_dim=mode_dim,
