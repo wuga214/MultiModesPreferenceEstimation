@@ -21,6 +21,8 @@ def attention(Rtrain, Rtest, index_map, item_names, latex_path, fig_path, settin
         if 'optimizer' not in row.keys():
             row['optimizer'] = 'Adam'
 
+        # row['epoch'] = 1
+
         mmup_model = models[row['model']](Rtrain,
                                           embedded_matrix=np.empty((0)),
                                           mode_dim=row['mode_dimension'],
@@ -41,8 +43,6 @@ def attention(Rtrain, Rtest, index_map, item_names, latex_path, fig_path, settin
                                           return_model=True)
 
         attentions, kernels, predictions = mmup_model.interprate(Rtest[:100])
-
-        attentions = attentions*1000
 
         visualization_samples = get_attention_example_items(Rtest[:100], predictions, 9)
 

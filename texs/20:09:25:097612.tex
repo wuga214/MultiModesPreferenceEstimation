@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage[margin=0.0in,paperwidth=9in,paperheight=2.2in]{geometry}
+
+\title{Tikz Test}
+\author{wuga214 }
+\date{January 2020}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+
+%Nodes
+\node[rectangle, thick, minimum width=60mm] (item1) {Autumn Tale, An (Conte d'automne) (1998)};
+\node[rectangle, thick, minimum width=60mm] (item2) [below=0 of item1] {Harvey (1950)};
+\node[rectangle, thick, minimum width=60mm] (item3) [below=0 of item2] {Wrong Trousers, The (1993)};
+\node[rectangle, thick, minimum width=60mm] (item4) [below=0 of item3] {Days of Heaven (1978)};
+\node[rectangle, thick, minimum width=60mm] (item5) [below=0 of item4] {Tao of Steve, The (2000)};
+\node[rectangle, thick, minimum width=60mm] (item6) [below=0 of item5] {Big Kahuna, The (2000)};
+\node[rectangle, thick, minimum width=60mm] (item7) [below=0 of item6] {Afterglow (1997)};
+\node[rectangle, thick, minimum width=60mm] (item8) [below=0 of item7] {Star Wars: Episode V - The Empire Strikes Back (1980)};
+\node[rectangle, thick, minimum width=60mm] (item9) [below=0 of item8] {Star Wars: Episode VI - Return of the Jedi (1983)};
+
+\node[rectangle, thick, minimum width=20mm] (preference1) [right=of item3] {Preference1};
+\node[rectangle, thick, minimum width=20mm] (preference2) [right=of item5] {Preference2};
+\node[rectangle, thick, minimum width=20mm] (preference3) [right=of item7] {Preference3};
+
+\node[rectangle, thick, minimum width=60mm] (recommend5) [right= of preference2] {American Beauty (1999)};
+\node[rectangle, thick, minimum width=60mm] (recommend4) [above=0 of recommend5] {Philadelphia Story, The (1940)};
+\node[rectangle, thick, minimum width=60mm] (recommend3) [above=0 of recommend4] {Casablanca (1942)};
+\node[rectangle, thick, minimum width=60mm] (recommend2) [above=0 of recommend3] {Babe (1995)};
+\node[rectangle, thick, minimum width=60mm] (recommend1) [above=0 of recommend2] {Shakespeare in Love (1998)};
+\node[rectangle, thick, minimum width=60mm] (recommend6) [below=0 of recommend5] {Like Water for Chocolate (Como agua para chocolate) (1992)};
+\node[rectangle, thick, minimum width=60mm] (recommend7) [below=0 of recommend6] {Annie Hall (1977)};
+\node[rectangle, thick, minimum width=60mm] (recommend8) [below=0 of recommend7] {Groundhog Day (1993)};
+\node[rectangle, thick, minimum width=60mm] (recommend9) [below=0 of recommend8] {Amadeus (1984)};
+
+%Lines
+\draw[line width=0.3mm, LimeGreen!14.6553249359] (item1.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!42.6473960876] (item2.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!14.5985422134] (item3.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!10.9835062027] (item4.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!82.60131073] (item5.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!72.793182373] (item6.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!10.9835062027] (item7.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!37.5071220398] (item8.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!37.2370910645] (item9.east) -- (preference1.west);
+
+\draw[line width=0.3mm, orange!45.01121521] (item1.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!45.01121521] (item2.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!45.01121521] (item3.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!45.01121521] (item4.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!45.01121521] (item5.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!45.01121521] (item6.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!45.01121521] (item7.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!45.01121521] (item8.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!45.01121521] (item9.east) -- (preference2.west);
+
+\draw[line width=0.3mm, cyan!0.0] (item1.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!20.5439033508] (item2.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!99.9969482422] (item3.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!0.214098364115] (item4.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!0.0] (item5.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!0.0] (item6.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!2.22650814056] (item7.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!87.7844772339] (item8.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!68.5174255371] (item9.east) -- (preference3.west);
+
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend1.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend2.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend3.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend4.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend5.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend6.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend7.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend8.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend9.west);
+
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend1.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend2.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend3.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend4.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend5.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend6.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend7.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend8.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend9.west);
+
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend1.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend2.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend3.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend4.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend5.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend6.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend7.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend8.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend9.west);
+
+
+
+\end{tikzpicture}
+
+\end{document}

@@ -61,7 +61,9 @@ def get_attention_example_items(inputs, outputs, size=9):
         else:
             input_candidate = np.random.choice(input_nonzeros, size, replace=False)
 
-        output_candidate = np.argsort(output_row)[::-1][:size]
+        output_candidate = np.argsort(output_row)[::-1][:size+len(input_nonzeros)]
+
+        output_candidate = np.delete(output_candidate, np.isin(output_candidate, input_nonzeros).nonzero()[0])
 
         values.append([input_candidate, output_candidate])
 
@@ -81,6 +83,8 @@ def write_latex(samples, attentions, kernels, item_names, latex_template, path):
 
         attention = attentions[index].T[input]
         kernel = kernels[index][output]
+
+        attention = (attention-np.min(attention)) / (np.max(attention)-np.min(attention)+0.000001) * 100
 
         feeds = dict()
         for i in range(len(input)):
@@ -103,7 +107,7 @@ def write_latex(samples, attentions, kernels, item_names, latex_template, path):
                 if j == kernel[i]:
                     feeds['kernel_{0}_{1}'.format(j+1, i+1)] = 100
                 else:
-                    feeds['kernel_{0}_{1}'.format(j+1, i+1)] = 1
+                    feeds['kernel_{0}_{1}'.format(j+1, i+1)] = 0
 
         timestr = datetime.datetime.now().strftime("%H:%M:%S:%f")
 

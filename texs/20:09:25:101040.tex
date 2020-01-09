@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage[margin=0.0in,paperwidth=9in,paperheight=2.2in]{geometry}
+
+\title{Tikz Test}
+\author{wuga214 }
+\date{January 2020}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+
+%Nodes
+\node[rectangle, thick, minimum width=60mm] (item1) {Breakfast at Tiffany's (1961)};
+\node[rectangle, thick, minimum width=60mm] (item2) [below=0 of item1] {Wild Bunch, The (1969)};
+\node[rectangle, thick, minimum width=60mm] (item3) [below=0 of item2] {Psycho (1960)};
+\node[rectangle, thick, minimum width=60mm] (item4) [below=0 of item3] {Love in the Afternoon (1957)};
+\node[rectangle, thick, minimum width=60mm] (item5) [below=0 of item4] {Funny Face (1957)};
+\node[rectangle, thick, minimum width=60mm] (item6) [below=0 of item5] {Raiders of the Lost Ark (1981)};
+\node[rectangle, thick, minimum width=60mm] (item7) [below=0 of item6] {Good, The Bad and The Ugly, The (1966)};
+\node[rectangle, thick, minimum width=60mm] (item8) [below=0 of item7] {Graduate, The (1967)};
+\node[rectangle, thick, minimum width=60mm] (item9) [below=0 of item8] {To Kill a Mockingbird (1962)};
+
+\node[rectangle, thick, minimum width=20mm] (preference1) [right=of item3] {Preference1};
+\node[rectangle, thick, minimum width=20mm] (preference2) [right=of item5] {Preference2};
+\node[rectangle, thick, minimum width=20mm] (preference3) [right=of item7] {Preference3};
+
+\node[rectangle, thick, minimum width=60mm] (recommend5) [right= of preference2] {Casablanca (1942)};
+\node[rectangle, thick, minimum width=60mm] (recommend4) [above=0 of recommend5] {North by Northwest (1959)};
+\node[rectangle, thick, minimum width=60mm] (recommend3) [above=0 of recommend4] {Star Wars: Episode VI - Return of the Jedi (1983)};
+\node[rectangle, thick, minimum width=60mm] (recommend2) [above=0 of recommend3] {Wizard of Oz, The (1939)};
+\node[rectangle, thick, minimum width=60mm] (recommend1) [above=0 of recommend2] {Star Wars: Episode V - The Empire Strikes Back (1980)};
+\node[rectangle, thick, minimum width=60mm] (recommend6) [below=0 of recommend5] {Rear Window (1954)};
+\node[rectangle, thick, minimum width=60mm] (recommend7) [below=0 of recommend6] {Alien (1979)};
+\node[rectangle, thick, minimum width=60mm] (recommend8) [below=0 of recommend7] {Princess Bride, The (1987)};
+\node[rectangle, thick, minimum width=60mm] (recommend9) [below=0 of recommend8] {Terminator, The (1984)};
+
+%Lines
+\draw[line width=0.3mm, LimeGreen!2.35027742386] (item1.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!7.39192438126] (item2.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!99.9991455078] (item3.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!1.82105278969] (item4.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!3.29304552078] (item5.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!7.4771733284] (item6.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!6.7026758194] (item7.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!7.19649648666] (item8.east) -- (preference1.west);
+\draw[line width=0.3mm, LimeGreen!7.43992996216] (item9.east) -- (preference1.west);
+
+\draw[line width=0.3mm, orange!11.0231733322] (item1.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!11.0231733322] (item2.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!11.0231733322] (item3.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!11.0231733322] (item4.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!11.0231733322] (item5.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!11.0231733322] (item6.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!11.0231733322] (item7.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!11.0231733322] (item8.east) -- (preference2.west);
+\draw[line width=0.3mm, orange!11.0231733322] (item9.east) -- (preference2.west);
+
+\draw[line width=0.3mm, cyan!7.08649539948] (item1.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!5.8385720253] (item2.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!5.46719408035] (item3.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!0.0] (item4.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!1.56823766232] (item5.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!12.6272573471] (item6.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!14.05235672] (item7.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!24.2375946045] (item8.east) -- (preference3.west);
+\draw[line width=0.3mm, cyan!19.6258640289] (item9.east) -- (preference3.west);
+
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend1.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend2.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend3.west);
+\draw[line width=0.3mm, LimeGreen!100] (preference1.east) -- (recommend4.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend5.west);
+\draw[line width=0.3mm, LimeGreen!100] (preference1.east) -- (recommend6.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend7.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend8.west);
+\draw[line width=0.3mm, LimeGreen!0] (preference1.east) -- (recommend9.west);
+
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend1.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend2.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend3.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend4.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend5.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend6.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend7.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend8.west);
+\draw[line width=0.3mm, orange!0] (preference2.east) -- (recommend9.west);
+
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend1.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend2.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend3.west);
+\draw[line width=0.3mm, cyan!0] (preference3.east) -- (recommend4.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend5.west);
+\draw[line width=0.3mm, cyan!0] (preference3.east) -- (recommend6.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend7.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend8.west);
+\draw[line width=0.3mm, cyan!100] (preference3.east) -- (recommend9.west);
+
+
+
+\end{tikzpicture}
+
+\end{document}
