@@ -14,30 +14,34 @@
 \begin{tikzpicture}
 
 ###
+
 %Nodes
-\node[rectangle, thick, minimum width=60mm] (item1) <{item1}>;
-\node[rectangle, thick, minimum width=60mm, label={{[anchor=south east, draw=red, inner sep=0pt]south east:$A$}}] (item2) [below=0 of item1] <{item2}>;
-\node[rectangle, thick, minimum width=60mm] (item3) [below=0 of item2] <{item3}>;
-\node[rectangle, thick, minimum width=60mm] (item4) [below=0 of item3] <{item4}>;
-\node[rectangle, thick, minimum width=60mm] (item5) [below=0 of item4] <{item5}>;
-\node[rectangle, thick, minimum width=60mm] (item6) [below=0 of item5] <{item6}>;
-\node[rectangle, thick, minimum width=60mm] (item7) [below=0 of item6] <{item7}>;
-\node[rectangle, thick, minimum width=60mm] (item8) [below=0 of item7] <{item8}>;
-\node[rectangle, thick, minimum width=60mm] (item9) [below=0 of item8] <{item9}>;
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item1}>}}] (item1) {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item2}>}}] (item2) [below=0 of item1] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item3}>}}] (item3) [below=0 of item2] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item4}>}}] (item4) [below=0 of item3] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item5}>}}] (item5) [below=0 of item4] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item6}>}}] (item6) [below=0 of item5] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item7}>}}] (item7) [below=0 of item6] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item8}>}}] (item8) [below=0 of item7] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, label={{[anchor=east, inner sep=5pt]east:<{item9}>}}] (item9) [below=0 of item8] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm] (obs) [above=0.2 of item1] {{Observed Interactions}};
 
 \node[rectangle, thick, minimum width=20mm] (preference1) [right=of item3] <{preference1}>;
 \node[rectangle, thick, minimum width=20mm] (preference2) [right=of item5] <{preference2}>;
 \node[rectangle, thick, minimum width=20mm] (preference3) [right=of item7] <{preference3}>;
+\node[rectangle, thick, minimum height=4mm, minimum width=20mm] (usr) [right= of obs, above= of preference1] {{User Preferences}};
 
-\node[rectangle, thick, minimum width=60mm] (recommend5) [right= of preference2] <{recommend5}>;
-\node[rectangle, thick, minimum width=60mm] (recommend4) [above=0 of recommend5] <{recommend4}>;
-\node[rectangle, thick, minimum width=60mm] (recommend3) [above=0 of recommend4] <{recommend3}>;
-\node[rectangle, thick, minimum width=60mm] (recommend2) [above=0 of recommend3] <{recommend2}>;
-\node[rectangle, thick, minimum width=60mm] (recommend1) [above=0 of recommend2] <{recommend1}>;
-\node[rectangle, thick, minimum width=60mm] (recommend6) [below=0 of recommend5] <{recommend6}>;
-\node[rectangle, thick, minimum width=60mm] (recommend7) [below=0 of recommend6] <{recommend7}>;
-\node[rectangle, thick, minimum width=60mm] (recommend8) [below=0 of recommend7] <{recommend8}>;
-\node[rectangle, thick, minimum width=60mm] (recommend9) [below=0 of recommend8] <{recommend9}>;
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap5}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend5}>}}] (recommend5) [right= of preference2] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap4}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend4}>}}] (recommend4) [above=0 of recommend5] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap3}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend3}>}}] (recommend3) [above=0 of recommend4] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap2}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend2}>}}] (recommend2) [above=0 of recommend3] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap1}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend1}>}}] (recommend1) [above=0 of recommend2] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap6}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend6}>}}] (recommend6) [below=0 of recommend5] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap7}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend7}>}}] (recommend7) [below=0 of recommend6] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap8}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend8}>}}] (recommend8) [below=0 of recommend7] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm, left color=red!{overlap9}, right color=white, label={{[anchor=west, inner sep=5pt]west:<{recommend9}>}}] (recommend9) [below=0 of recommend8] {{}};
+\node[rectangle, thick, minimum height=4mm, minimum width=60mm] (pdt) [right= of usr, above=0.2 of recommend1] {{Recommendations}};
 
 %Lines
 \draw[line width=0.3mm, LimeGreen!{attention_1_1}] (item1.east) -- (preference1.west);

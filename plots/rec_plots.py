@@ -149,3 +149,26 @@ def precision_recall_curve(df,
     else:
         plt.show()
     plt.close()
+
+
+def multi_modes_histogram(df, x='x', y='y', save=True):
+
+    fig, ax = plt.subplots(figsize=(4, 3))
+    sns.distplot(df[df[y] == 1.0][x], kde=False, label="One Mode")
+    sns.distplot(df[df[y] == 2.0][x], kde=False, label="Two Modes")
+    sns.distplot(df[df[y] == 3.0][x], kde=False, label="Three Modes")
+
+    plt.xlabel("Number of Observed Interactions")
+    plt.ylabel("Frequency")
+
+    plt.legend()
+    plt.tight_layout()
+
+    if save:
+        fig_path = load_yaml('config/global.yml', key='path')['figs']
+        plt.savefig("{0}/multi_mode.pdf".format(fig_path), format="pdf")
+        plt.savefig("{0}/multi_mode.png".format(fig_path), format="png")
+
+    else:
+        plt.show()
+    plt.close()

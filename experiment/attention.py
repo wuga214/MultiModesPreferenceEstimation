@@ -6,7 +6,8 @@ import tensorflow as tf
 from utils.progress import WorkSplitter
 from utils.optimizers import Optimizer
 from utils.modelnames import models
-from utils.functions import get_attention_example_items, write_latex,read_template
+from utils.functions import get_attention_example_items, write_latex, read_template
+from plots.rec_plots import multi_modes_histogram
 import glob
 
 
@@ -46,42 +47,61 @@ def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path
                                           root=row['root'],
                                           return_model=True)
 
-        attentions, kernels, predictions = mmup_model.interprate(Rtrain[100:500])
-
-        visualization_samples = get_attention_example_items(Rtrain[100:500], predictions, Rtest[100:500], 9)
-
-        items = []
-
-        for i in index_map:
-            try:
-                name = item_names[item_names['ItemID'] == i]['Name'].values[0]
-            except:
-                name = "Unknown"
-
-            items.append(name)
-
-        items = np.array(items)
-
-        latex_template = read_template(template_path)
-
-        cmd = "rm {0}/*.tex".format(latex_path)
-        os.system(cmd)
+        train_batches = mmup_model.get_batches(Rtrain, 100)
+        test_batches = mmup_model.get_batches(Rtest, 100)
 
         cmd = "rm {0}/*.pdf".format(fig_path)
         os.system(cmd)
 
-        write_latex(visualization_samples, attentions, kernels, items, latex_template, latex_path)
+        interaction_modes_counts = []
 
-        tex_files = glob.glob(latex_path + "/*.tex")
+        train_batches = train_batches
 
-        for tex in tex_files:
-            cmd = "pdflatex -halt-on-error -output-directory {0} {1}".format(fig_path, tex)
+        for i in range(len(train_batches)):
+
+            attentions, kernels, predictions = mmup_model.interprate(train_batches[i])
+
+            visualization_samples = get_attention_example_items(train_batches[i], predictions, test_batches[i], 9)
+
+            interaction_counts = np.sum(train_batches[i], axis=1).tolist()
+            for j in range(kernels.shape[0]):
+                if interaction_counts[j][0] > 200:
+                    continue
+                interaction_modes_counts.append([interaction_counts[j][0],
+                                                 len(np.unique(kernels[j][visualization_samples[j][1]]))])
+
+            items = []
+
+            for i in index_map:
+                try:
+                    name = item_names[item_names['ItemID'] == i]['Name'].values[0]
+                except:
+                    name = "Unknown"
+
+                items.append(name)
+
+            items = np.array(items)
+
+            latex_template = read_template(template_path)
+
+            write_latex(visualization_samples, attentions, kernels, items, latex_template, latex_path)
+
+            tex_files = glob.glob(latex_path + "/*.tex")
+
+            for tex in tex_files:
+                cmd = "pdflatex -halt-on-error -output-directory {0} {1}".format(fig_path, tex)
+                os.system(cmd)
+
+            cmd = "rm {0}/*.log".format(fig_path)
+            os.system(cmd)
+            cmd = "rm {0}/*.aux".format(fig_path)
+            os.system(cmd)
+            cmd = "rm {0}/*.tex".format(latex_path)
             os.system(cmd)
 
-        cmd = "rm {0}/*.log".format(fig_path)
-        os.system(cmd)
-        cmd = "rm {0}/*.aux".format(fig_path)
-        os.system(cmd)
+        interaction_modes_counts = pd.DataFrame(np.array(interaction_modes_counts), columns=['x', 'y'])
+
+        multi_modes_histogram(interaction_modes_counts)
 
         mmup_model.sess.close()
         tf.reset_default_graph()

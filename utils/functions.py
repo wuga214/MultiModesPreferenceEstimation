@@ -79,17 +79,23 @@ def read_template(path):
         return file.read()
 
 
-def write_latex(samples, attentions, kernels, item_names, latex_template, path):
+def write_latex(samples, attentions, kernels, item_names, latex_template, path, size=9):
 
     for index, instance in enumerate(samples):
-        input = instance[0]
-        output = instance[1]
-        overlap = instance[2]
+        input = instance[0][:size]
+        output = instance[1][:size]
+        overlap = instance[2][:size]
+
+        if np.sum(overlap) < 5:
+            continue
 
         attention = attentions[index].T[input]
         kernel = kernels[index][output]
 
-        attention = (attention-np.min(attention)) / (np.max(attention)-np.min(attention)+0.000001) * 100
+        # attention = (attention-np.min(attention)) / (np.max(attention)-np.min(attention)+0.000001) * 100
+
+        attention = np.square(attention)
+        attention = attention/np.sum(attention, axis=0)
 
         feeds = dict()
         for i in range(len(input)):
@@ -130,7 +136,6 @@ def write_latex(samples, attentions, kernels, item_names, latex_template, path):
         tex = tex.replace("<", "{")
         tex = tex.replace(">", "}")
         tex = tex.replace("&", "")
-
 
         with open(os.path.join(path, '{0}.tex'.format(timestr)), 'w') as the_file:
             the_file.write(tex)
