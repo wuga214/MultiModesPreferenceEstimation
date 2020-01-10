@@ -13,7 +13,7 @@ def main(args):
     pattern = "#!/usr/bin/env bash\n" \
               "source {0}\n" \
               "cd {1}\n" \
-              "python tune_parameters.py --data-dir {2} --save-path {3}/{4}.csv --parameters config/{4}.yml\n"
+              "python tune_parameters.py --data-dir {2} --save-path {3}/tuning_general/{4}.csv --parameters config/{3}/{4}.yml\n"
 
     for setting in yaml_files:
         name, extension = os.path.splitext(setting)
@@ -33,7 +33,6 @@ def main(args):
         commands.append(command_pattern.format(args.max_time, args.memory, bash))
     content = "\n".join(commands)
     write_file(bash_path + args.problem, 'run_' + args.problem + '.sh', content)
-
 
 
 if __name__ == "__main__":
