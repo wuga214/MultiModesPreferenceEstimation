@@ -49,23 +49,23 @@ class MultiModesPreferenceEstimation(object):
             item_key_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.key_dim],
                                                                stddev=1 / 500.0),
                                            name="item_key_weights")
-            tf.summary.histogram("item_key_weights", item_key_weights)
+#            tf.summary.histogram("item_key_weights", item_key_weights)
             item_keys = tf.nn.relu(tf.matmul(item_embeddings, item_key_weights))
-            tf.summary.histogram("item_keys", item_keys)
+#            tf.summary.histogram("item_keys", item_keys)
             item_value_weights = tf.Variable(tf.truncated_normal([self.embed_dim, self.embed_dim],
                                                                  stddev=1 / 500.0),
                                              name="item_value_weights")
             item_values = tf.matmul(item_embeddings, item_value_weights)
 
-            tf.summary.histogram("item_values", item_values)
+#            tf.summary.histogram("item_values", item_values)
             self.item_query = tf.Variable(tf.truncated_normal([self.input_dim, self.embed_dim],
                                                               stddev=1 / 500.0),
                                              name="item_query_weights")
-            tf.summary.histogram("item_query", self.item_query)
+#            tf.summary.histogram("item_query", self.item_query)
             user_keys = tf.nn.relu(tf.Variable(tf.truncated_normal([self.key_dim, self.mode_dim],
                                                                    stddev=1 / 500.0),
                                                name="user_key_weights"))
-            tf.summary.histogram("user_keys", user_keys)
+#            tf.summary.histogram("user_keys", user_keys)
         with tf.variable_scope('encoding'):
             encode_bias = tf.Variable(tf.constant(0., shape=[self.mode_dim, self.embed_dim]), name="Bias")
             attention = tf.tensordot(tf.multiply(tf.expand_dims(inputs, -1), item_keys), user_keys, axes=[[2], [0]])
@@ -73,7 +73,7 @@ class MultiModesPreferenceEstimation(object):
                                                  tf.expand_dims(inputs, -1)) + 0.0001, perm=[0,2,1])
             self.attention = attention/tf.expand_dims(tf.reduce_sum(attention, axis=2), -1)
 
-            tf.summary.histogram("attention", self.attention)
+#            tf.summary.histogram("attention", self.attention)
             self.user_latent = tf.nn.leaky_relu(tf.tensordot(self.attention,
                                                              item_values,
                                                              axes=[[2], [0]]) + encode_bias)
@@ -94,8 +94,8 @@ class MultiModesPreferenceEstimation(object):
                                                        predictions=self.prediction,
                                                        weights=loss_weights)
             self.loss = tf.reduce_mean(rating_loss) + self.lamb*l2_loss
-            tf.summary.histogram("label", self.inputs)
-            tf.summary.histogram("prediction", self.prediction)
+#            tf.summary.histogram("label", self.inputs)
+#            tf.summary.histogram("prediction", self.prediction)
             tf.summary.scalar("loss", self.loss)
 
         self.summaries = tf.summary.merge_all()
