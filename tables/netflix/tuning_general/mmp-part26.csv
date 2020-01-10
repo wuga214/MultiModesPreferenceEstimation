@@ -1,0 +1,2 @@
+model,similarity,alpha,batch_size,corruption,epoch,iteration,key_dimension,lambda,learning_rate,mode_dimension,normalize,rank,root,topK,NDCG,Precision@10,Precision@15,Precision@20,Precision@5,Precision@50,R-Precision,Recall@10,Recall@15,Recall@20,Recall@5,Recall@50
+MMP,Cosine,0,32,0.2,300,10,4,0.001,5e-05,4,,60,0.9,,"[0.1479, 0.0004]","[0.1004, 0.0004]","[0.0941, 0.0003]","[0.0893, 0.0003]","[0.1098, 0.0005]","[0.0724, 0.0002]","[0.0824, 0.0003]","[0.0735, 0.0004]","[0.0994, 0.0004]","[0.1216, 0.0005]","[0.0427, 0.0003]","[0.2181, 0.0006]"
