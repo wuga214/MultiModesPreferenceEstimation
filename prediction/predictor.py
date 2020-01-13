@@ -34,8 +34,11 @@ def sub_routine(vector_u, matrix_V, vector_train, bias, measure, topK=500, gpu=F
 
     train_index = vector_train.nonzero()[1]
     if measure == "Cosine":
-        # import ipdb; ipdb.set_trace()
-        vector_predict = np.max(matrix_V.dot(vector_u.T), axis=1)
+        if len(vector_u.shape) > 1:
+            # import ipdb; ipdb.set_trace()
+            vector_predict = np.max(matrix_V.dot(vector_u.T), axis=1)
+        else:
+            vector_predict = matrix_V.dot(vector_u)
     else:
         if gpu:
             import cupy as cp
