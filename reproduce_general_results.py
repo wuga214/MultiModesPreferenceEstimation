@@ -40,7 +40,7 @@ def main(args):
 
     results = pd.concat(frame)
     save_dataframe_csv(results, table_path, args.save_path)
-    precision_recall_curve(results, topK, save=True, folder='analysis/'+args.tuning_result_path)
+#    precision_recall_curve(results, topK, save=True, folder='analysis/'+args.tuning_result_path)
 
 if __name__ == "__main__":
     # Commandline arguments
