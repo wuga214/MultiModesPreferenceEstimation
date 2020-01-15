@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 source ~/ENV/bin/activate
 cd ~/MultiModesPreferenceEstimation
-python tune_parameters.py --data-dir data/netflix/ --save-path netflix/mmp-part28.csv --parameters config/netflix/mmp-part28.yml
+python tune_parameters.py --data-dir data/netflix/ --save-path netflix/tuning_general/mmp-part28.csv --parameters config/netflix/mmp-part28.yml

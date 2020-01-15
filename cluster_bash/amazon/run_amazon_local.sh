@@ -1,0 +1,21 @@
+cd ~/git/MultiModesPreferenceEstimation
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final1.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final2.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final3.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final4.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final5.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final6.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final7.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final8.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final9.csv
+python reproduce_general_results.py --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/tuning_general --save-path amazon/digital_music/final_general/mmp_final10.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final1.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final2.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final3.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final4.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final5.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final6.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final7.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final8.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final9.csv
+python reproduce_general_results.py --data-dir data/amazon/video_games/ --tuning-result-path amazon/video_games/tuning_general --save-path amazon/video_games/final_general/mmp_final10.csv
