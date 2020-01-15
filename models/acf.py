@@ -221,8 +221,8 @@ class ACF(object):
             #              self.item_idx_j: batches[0][2],
             #              self.label: batches[0][3]}
 
-            summ = self.sess.run(self.summaries, feed_dict=feed_dict)
-            self.writer.add_summary(summ, global_step=i)
+            # summ = self.sess.run(self.summaries, feed_dict=feed_dict)
+            # self.writer.add_summary(summ, global_step=i)
 
     def get_RQ(self):
         return self.sess.run(self.user_embeddings)
