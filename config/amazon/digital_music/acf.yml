@@ -4,7 +4,7 @@ parameters:
     alpha: [1]
     batch_size: [512]
     corruption: [0]
-    epoch: [1]
+    epoch: [100]
     iteration: [10]
     key_dimension: [3, 4, 5]
     lambda: [0.00001, 0.0001, 0.001]
