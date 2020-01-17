@@ -12,6 +12,7 @@ import glob
 
 
 def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path, settings_df, template_path,
+              preference_analysis=False,
               case_study=False,
               gpu_on=True):
     progress = WorkSplitter()
@@ -28,7 +29,7 @@ def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path
         if 'optimizer' not in row.keys():
             row['optimizer'] = 'Adam'
 
-        # row['epoch'] = 1
+        row['epoch'] = 30
 
         mmup_model = models[row['model']](Rtrain,
                                           embedded_matrix=np.empty((0)),
@@ -57,7 +58,50 @@ def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path
 
         interaction_modes_counts = []
 
-        train_batches = train_batches
+        items = []
+        for i in index_map:
+            try:
+                name = item_names[item_names['ItemID'] == i]['Name'].values[0]
+            except:
+                name = "Unknown"
+            items.append(name)
+
+        items = np.array(items)
+
+        pop = np.squeeze(np.asarray(np.sum(Rtrain, axis=0)))
+
+        latex_template = read_template(template_path)
+
+
+        if preference_analysis:
+
+
+            full_interaction_user = np.ones((1, n))
+            attentions, kernels, predictions = mmup_model.interprate(full_interaction_user)
+
+            _,  modes, _ = attentions.shape
+
+            results = []
+
+            for i in range(modes):
+                index = np.argsort(attentions[0][i])[::-1][:10]
+                    #attentions[0][1][np.argpartition(-attentions[0][i], 10)[:10]].argsort()[::-1]
+
+                result = pd.DataFrame({'Item': items[index],
+                                       'Attention': attentions[0][i][index],
+                                       'Popularity': pop[index],
+                                       'Mode': i
+                                       })
+
+                results.append(result)
+
+            results = pd.concat(results)
+
+            results.to_csv("preference_anaysis.csv")
+
+            import ipdb; ipdb.set_trace()
+
+
 
         for i in range(len(train_batches)):
 
@@ -74,19 +118,6 @@ def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path
 
 
             if case_study:
-                items = []
-
-                for i in index_map:
-                    try:
-                        name = item_names[item_names['ItemID'] == i]['Name'].values[0]
-                    except:
-                        name = "Unknown"
-
-                    items.append(name)
-
-                items = np.array(items)
-
-                latex_template = read_template(template_path)
 
                 write_latex(visualization_samples, attentions, kernels, items, latex_template, latex_path)
 
