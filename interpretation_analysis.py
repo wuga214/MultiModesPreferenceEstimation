@@ -7,16 +7,24 @@ import argparse
 
 def main(args):
 
-    settings_df = load_dataframe_csv(args.tab_path+"/ml1m/final_general/mmp_final1.csv")
+    settings_df = load_dataframe_csv(args.tab_path+"/ml1m/final_general/mmp_final.csv")
 
     R_train = load_numpy(path=args.data_dir, name=args.train_set)
     R_valid = load_numpy(path=args.data_dir, name=args.valid_set)
     R_test = load_numpy(path=args.data_dir, name=args.test_set)
 
     index_map = np.load(args.data_dir+args.index)
-    item_names = load_dataframe_csv(args.data_dir+args.names, delimiter="::", names=['ItemID', 'Name', 'Category'])
 
-    attention(R_train, R_valid, R_test, index_map, item_names, args.tex_path, args.fig_path, settings_df, args.template_path,
+    item_names = None
+
+    try:
+        item_names = load_dataframe_csv(args.data_dir+args.names, delimiter="::", names=['ItemID', 'Name', 'Category'])
+    except:
+        print("Meta-data does not exist")
+
+    attention(R_train, R_valid, R_test, index_map, item_names, args.tex_path, args.fig_path, settings_df,
+              args.template_path,
+              case_study=args.case_study,
               gpu_on=True)
 
 
@@ -35,6 +43,7 @@ if __name__ == "__main__":
     parser.add_argument('--test', dest='test_set', default='Rtest.npz')
     parser.add_argument('--train', dest='train_set', default='Rtrain.npz')
     parser.add_argument('--valid', dest='valid_set', default='Rvalid.npz')
+    parser.add_argument('--case-study', dest='case_study', action='store_true')
 
     args = parser.parse_args()
 

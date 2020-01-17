@@ -7,11 +7,13 @@ from utils.progress import WorkSplitter
 from utils.optimizers import Optimizer
 from utils.modelnames import models
 from utils.functions import get_attention_example_items, write_latex, read_template
-from plots.rec_plots import multi_modes_histogram
+from plots.rec_plots import multi_modes_histogram,multi_modes_count
 import glob
 
 
-def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path, settings_df, template_path, gpu_on=True):
+def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path, settings_df, template_path,
+              case_study=False,
+              gpu_on=True):
     progress = WorkSplitter()
     m, n = Rtrain.shape
 
@@ -70,38 +72,43 @@ def attention(Rtrain, Rvalid, Rtest, index_map, item_names, latex_path, fig_path
                 interaction_modes_counts.append([interaction_counts[j][0],
                                                  len(np.unique(kernels[j][visualization_samples[j][1]]))])
 
-            items = []
 
-            for i in index_map:
-                try:
-                    name = item_names[item_names['ItemID'] == i]['Name'].values[0]
-                except:
-                    name = "Unknown"
+            if case_study:
+                items = []
 
-                items.append(name)
+                for i in index_map:
+                    try:
+                        name = item_names[item_names['ItemID'] == i]['Name'].values[0]
+                    except:
+                        name = "Unknown"
 
-            items = np.array(items)
+                    items.append(name)
 
-            latex_template = read_template(template_path)
+                items = np.array(items)
 
-            write_latex(visualization_samples, attentions, kernels, items, latex_template, latex_path)
+                latex_template = read_template(template_path)
 
-            tex_files = glob.glob(latex_path + "/*.tex")
+                write_latex(visualization_samples, attentions, kernels, items, latex_template, latex_path)
 
-            for tex in tex_files:
-                cmd = "pdflatex -halt-on-error -output-directory {0} {1}".format(fig_path, tex)
+                tex_files = glob.glob(latex_path + "/*.tex")
+
+                for tex in tex_files:
+                    cmd = "pdflatex -halt-on-error -output-directory {0} {1}".format(fig_path, tex)
+                    os.system(cmd)
+
+                cmd = "rm {0}/*.log".format(fig_path)
                 os.system(cmd)
-
-            cmd = "rm {0}/*.log".format(fig_path)
-            os.system(cmd)
-            cmd = "rm {0}/*.aux".format(fig_path)
-            os.system(cmd)
-            cmd = "rm {0}/*.tex".format(latex_path)
-            os.system(cmd)
+                cmd = "rm {0}/*.aux".format(fig_path)
+                os.system(cmd)
+                cmd = "rm {0}/*.tex".format(latex_path)
+                os.system(cmd)
 
         interaction_modes_counts = pd.DataFrame(np.array(interaction_modes_counts), columns=['x', 'y'])
 
         multi_modes_histogram(interaction_modes_counts)
+        multi_modes_count(interaction_modes_counts)
+
+        interaction_modes_counts.to_csv(template_path+"/modes_count.csv")
 
         mmup_model.sess.close()
         tf.reset_default_graph()
