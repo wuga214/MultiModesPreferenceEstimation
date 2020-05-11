@@ -133,3 +133,8 @@ dmypy.json
 
 # Others
 figs/attention_demos
+
+ .idea/MultiModesPreferenceEstimation.iml
+ .idea/misc.xml
+ .idea/workspace.xml
+ .idea/inspectionProfiles/Project_Default.xml
