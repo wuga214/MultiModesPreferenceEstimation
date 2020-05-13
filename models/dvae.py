@@ -222,4 +222,4 @@ def dvae(log_dir, matrix_train, num_items, kfac, dfac, lam, lr, seed, tau, std, 
     vae.build_graph()
     vae.train_model(matrix_train, beta, keep, epoch, batch_size, log_dir, seed)
     prediction = predict(matrix_train, kfac, dfac, lam, lr, seed, tau, std, nogb, topk, batch_size, log_dir)
-    print(prediction.shape)
+    return prediction

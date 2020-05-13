@@ -1,0 +1,12 @@
+parameters:
+    models: DVAE
+    batch_size: 512
+    epoch: 300
+    seed: 0
+    logdir: runs/
+    std: 0.075
+    keep: 0.5
+    tau: 0.1
+    nogb: False
+    topK: [5, 10, 15, 20, 50]
+    metric: [R-Precision, NDCG, Precision, Recall]
