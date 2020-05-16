@@ -1,0 +1,3 @@
+python reproduce_general_results_dvae.py  --data-dir datax/ --tuning-result-path ml1m/dvae/tuning_general/ --save-path ml1m/dvae/final_general/final.csv
+python reproduce_general_results_dvae.py  --data-dir data/amazon/digital_music/ --tuning-result-path amazon/digital_music/dvae/tuning_general/ --save-path amazon/digital_music/dvae/final_general/final.csv
+python reproduce_general_results_dvae.py  --data-dir data/amazon/video_games --tuning-result-path amazon/video_games/dvae/tuning_general/ --save-path amazon/video_games/dvae/final_general/final.csv
