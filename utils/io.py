@@ -139,6 +139,22 @@ def find_best_hyperparameters(folder_path, metric):
 
     return df
 
+def find_best_hyperparameters_dvae(folder_path, metric):
+    csv_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path)
+                 if os.path.isfile(os.path.join(folder_path, f)) and f.endswith('.csv')]
+    best_settings = []
+    for record in csv_files:
+        df = pd.read_csv(record)
+        # import ipdb; ipdb.set_trace()
+        df[metric+'_Score'] = df[metric].map(lambda x: ast.literal_eval(x)[0])
+        best_settings.append(df.loc[df[metric+'_Score'].idxmax()].to_dict())
+
+    df = pd.DataFrame(best_settings)
+    df = df.sort_values(by=metric+'_Score', ascending=False).head(1)
+    df = df.drop(metric+'_Score', axis=1)
+
+    return df
+
 def get_file_names(folder_path, extension='.yml'):
     return [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f)) and f.endswith(extension)]
 

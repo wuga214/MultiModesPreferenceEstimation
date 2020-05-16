@@ -4,7 +4,7 @@ from sklearn.model_selection import ParameterGrid
 from utils.progress import WorkSplitter
 import os
 from types import SimpleNamespace
-from models.dvae import dvae, predict
+from models.dvae import dvae
 from evaluation.metrics import evaluate
 from copy import deepcopy
 
