@@ -172,3 +172,47 @@ def multi_modes_histogram(df, x='x', y='y', save=True):
     else:
         plt.show()
     plt.close()
+
+
+def multi_modes_count(df, y='modes', save=True):
+
+    def udf(row):
+        value = row['y']
+        if value == 1.0:
+            return "One Mode"
+        elif value == 2.0:
+            return "Two Modes"
+        elif value == 3.0:
+            return "Three Modes"
+        elif value == 4.0:
+            return "Four Modes"
+        else:
+            return "Five Modes"
+
+    df = df.sort_values(by=['y'])
+    df['modes'] = df.apply(udf, axis=1)
+
+    fig, ax = plt.subplots(figsize=(3, 2.5))
+
+    sns.countplot(x=y, data=df)
+
+    hatches = itertools.cycle(['//', 'xx', '\\\\\\'])
+    for i, bar in enumerate(ax.patches):
+        hatch = next(hatches)
+        bar.set_hatch(hatch)
+
+    plt.xlabel("Number of User Preferences")
+    plt.ylabel("Number of Users")
+    plt.xticks(rotation=15)
+
+    plt.legend()
+    plt.tight_layout()
+
+    if save:
+        fig_path = load_yaml('config/global.yml', key='path')['figs']
+        plt.savefig("{0}/modes_count.pdf".format(fig_path), format="pdf")
+        plt.savefig("{0}/modes_count.png".format(fig_path), format="png")
+
+    else:
+        plt.show()
+    plt.close()

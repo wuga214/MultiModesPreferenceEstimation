@@ -142,7 +142,10 @@ class MultiModesPreferenceEstimation(object):
         return self.sess.run(self.item_query)
 
     def interprate(self, rating):
-        feed_dict = {self.inputs: rating.todense(), self.corruption: 0.}
+        try:
+            feed_dict = {self.inputs: rating.todense(), self.corruption: 0.}
+        except:
+            feed_dict = {self.inputs: rating, self.corruption: 0.}
         return self.sess.run([self.attention, self.kernel, self.prediction], feed_dict=feed_dict)
 
 
