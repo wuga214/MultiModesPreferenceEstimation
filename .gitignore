@@ -134,6 +134,7 @@ dmypy.json
 # Others
 figs/attention_demos
 
+.idea/
 .idea/MultiModesPreferenceEstimation.iml
 .idea/misc.xml
 .idea/workspace.xml
